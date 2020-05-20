@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BrightAct</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700=swap" rel="stylesheet">
-    <link href="data-viz.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
   </head>
 
   <body class="data-viz">
@@ -62,7 +62,7 @@
 
       // bubbles and external data
       var imageSeries = map.series.push(new am4maps.MapImageSeries());
-      imageSeries.dataSource.url = '/violence_by_country.json'; 
+      imageSeries.dataSource.url = '/data/violence_by_country.json'; 
       imageSeries.dataFields.value = "value";
 
       // Configure bubble visual
