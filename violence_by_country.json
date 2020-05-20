@@ -1,0 +1,142 @@
+[
+  {
+    "id": "AT",
+    "country": "Austria",
+    "value": 23
+  },
+  {
+    "id": "BE",
+    "country": "Belgium",
+    "value": 24
+  },
+  {
+    "id": "BG",
+    "country": "Bulgaria",
+    "value": 23
+  },
+  {
+    "id": "CY",
+    "country": "Cyprus",
+    "value": 15
+  },
+  {
+    "id": "CZ",
+    "country": "Czech Republic",
+    "value": 21
+  },
+  {
+    "id": "DE",
+    "country": "Germany",
+    "value": 22
+  },
+  {
+    "id": "DK",
+    "country": "Denmark",
+    "value": 32
+  },
+  {
+    "id": "EE",
+    "country": "Estonia",
+    "value": 20
+  },
+  {
+    "id": "GR",
+    "country": "Greece",
+    "value": 19
+  },
+  {
+    "id": "ES",
+    "country": "Spain",
+    "value": 13
+  },
+  {
+    "id": "FI",
+    "country": "Finland",
+    "value": 20
+  },
+  {
+    "id": "FR",
+    "country": "France",
+    "value": 26
+  },
+  {
+    "id": "HR",
+    "country": "Croatia",
+    "value": 13
+  },
+  {
+    "id": "HU",
+    "country": "Hungary",
+    "value": 21
+  },
+  {
+    "id": "IE",
+    "country": "Ireland",
+    "value": 15
+  },
+  {
+    "id": "IT",
+    "country": "Italy",
+    "value": 19
+  },
+  {
+    "id": "LT",
+    "country": "Lithuania",
+    "value": 24
+  },
+  {
+    "id": "LU",
+    "country": "Luxemburg",
+    "value": 22
+  },
+  {
+    "id": "LV",
+    "country": "Latvia",
+    "value": 32
+  },
+  {
+    "id": "MT",
+    "country": "Malta",
+    "value": 15
+  },
+  {
+    "id": "NL",
+    "country": "Netherlands",
+    "value": 25
+  },
+  {
+    "id": "PL",
+    "country": "Poland",
+    "value": 13
+  },
+  {
+    "id": "PT",
+    "country": "Portugal",
+    "value": 19
+  },
+  {
+    "id": "RO",
+    "country": "Romania",
+    "value": 24
+  },
+  {
+    "id": "SE",
+    "country": "Sweden",
+    "value": 28
+  },
+  {
+    "id": "SI",
+    "country": "Slovenia",
+    "value": 13
+  },
+  {
+    "id": "SK",
+    "country": "Slovakia",
+    "value": 23
+  },
+  {
+    "id": "GB",
+    "country": "United Kingdom",
+    "value": 29
+  }
+]
