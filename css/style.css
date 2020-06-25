@@ -1,0 +1,222 @@
+@import "tailwindcss/base";
+
+@import './utils/variables.css';
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+  @apply bg-lightGrey font-sans text-black;
+}
+
+h1 {
+  @apply font-serif text-xxl mt-1 mb-1;
+}
+
+h2 {
+  @apply font-serif mt-1 mb-1 text-large capitalize;
+}
+
+h3 {
+  @apply font-serif mt-1 mb-1 text-big capitalize;
+}
+
+a {
+  @apply font-bold text-orange;
+}
+
+ul {
+  list-style-type: none;
+  @apply p-0;
+}
+
+.title {
+  @apply p-4 grid grid-cols-1;
+}
+
+.title p {
+  @apply m-0;
+}
+
+.title h1 {
+  @apply text-orange;
+}
+
+@screen md {
+  .title {
+    @apply grid-cols-2;
+  }
+}
+
+/* MAP */
+.map {
+  @apply pr-12 pl-12 pt-6 pb-6;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+.map__chart {
+  height: 75vh;
+  width: 100%;
+}
+
+.map__legend {
+  width: 100%;
+  color: #fff;
+}
+
+.main-data {
+  @apply grid grid-cols-1 gap-6;
+}
+
+.main-data h1 {
+  @apply text-blue;
+}
+
+@screen md {
+  .main-data {
+    @apply grid grid-cols-similar-fractions pl-12 pr-12;
+  }
+}
+
+@screen md {
+  .main-data__1 {
+    @apply col-start-2 col-end-2;
+  }
+}
+
+.slider-wrapper h2 {
+  @apply pl-16 pb-6;
+}
+
+.slider {
+  @apply grid bg-orange text-lightGrey pl-12 pr-12;
+}
+
+@screen md {
+  .slider {
+    @apply grid-cols-three-to-one;
+  }
+}
+
+.slider__text > li {
+  @apply flex flex-row;
+}
+
+.slider__text > li > hgroup {
+  @apply self-center;
+}
+
+.slider__nav {
+  @apply flex items-end;
+}
+
+.slider__nav a:first-child {
+  @apply p-2;
+}
+
+.slider__nav a:last-child {
+  @apply p-4;
+}
+
+
+.covid-data {
+
+}
+
+
+.covid-data__chart .chart__heading {
+  @apply p-12;
+}
+
+.covid-data__main {
+  @apply grid p-12;
+}
+
+.covid-data__main h1,
+.covid-data__main h2,
+.covid-data__main h3 {
+  @apply text-blue;
+}
+
+@screen md {
+  .covid-data__main {
+    @apply grid-cols-similar-reverse gap-4;
+  }
+}
+
+.main__who {
+  @apply flex flex-row;
+}
+
+.main__who .main__info {
+  border-left: 2px solid black;
+  @apply p-4 ml-4;
+
+}
+
+.main__who h2 {
+  @apply uppercase;
+}
+
+.main__who p:last-of-type,
+.main__hubei p {
+  @apply inline;
+}
+
+.main__who h3:last-child,
+.main__hubei h3 {
+  @apply inline p-2 leading-relaxed;
+}
+
+.covid-data__countries {
+  @apply p-12;
+}
+  
+@screen md {
+  .covid-data__countries {
+    @apply grid grid-cols-three-indent-half gap-16;
+  }
+}
+
+.country {
+  @apply grid grid-cols-tho-thirds-inverse;
+  grid-template-areas: "text icon"
+  ". stats";
+}
+
+.country:first-of-type {
+  @apply col-start-2 col-end-2;
+}
+
+.country__top--text {
+  grid-area: text;
+  height: 5rem;
+}
+
+.country__top--img.margin {
+  @apply ml-4 mt-4;
+}
+
+.country__bottom {
+  grid-area: stats;
+  @apply relative;
+}
+
+.country__bottom:before {
+  content: "";
+  position: absolute;
+  border-top: 2px solid black;
+  width: 160%;
+  left: -7.5rem;
+}
+
+.country__bottom h1,
+.country__bottom p {
+  @apply m-0;
+}
+
+.country__bottom h1:first-of-type,
+.country__bottom p:first-of-type {
+  @apply pt-1;
+}

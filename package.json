@@ -1,0 +1,48 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@amcharts/amcharts4": "^4.9.27",
+    "@amcharts/amcharts4-fonts": "^4.0.1",
+    "@amcharts/amcharts4-geodata": "^4.1.15",
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-mixins": "^6.2.3",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "watch": "parcel watch index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-shadowworkers/brighact-dataviz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-shadowworkers/brighact-dataviz/issues"
+  },
+  "homepage": "https://github.com/team-shadowworkers/brighact-dataviz#readme",
+  "postcss": {
+    "plugins": {
+      "postcss-easy-import": {},
+      "autoprefixer": {},
+      "cssnano": {},
+      "postcss-preset-env": {
+        "stage": 0
+      },
+      "postcss-mixins": {},
+      "tailwindcss": {}
+    }
+  }
+}

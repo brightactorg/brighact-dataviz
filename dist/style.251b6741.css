@@ -1,0 +1,80 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+:root{
+  --body-text:"Roboto",sans-serif;
+  --heading-text:"Lato",sans-serif;
+  --brand-blue:#344055;
+  --light-gray:#f7f7f7;
+  --turq:#1ae4ca;
+  --light-turq:#91efe3;
+  --blue:#2786ff;
+  --tiny:.5rem;
+  --small:1rem;
+  --medium:1.5rem;
+  --big:2rem;
+  --large:2.5rem;
+  --huge:4.5rem;
+  --xxl:5rem;
+  --hugest:8rem;
+  --max:10rem;
+  --max-width-large:70rem;
+  --max-width-big:61.50rem;
+  --max-width-mid:50rem;
+  --max-width-small:15rem
+}
+*,:after,:before{
+  box-sizing:border-box
+}
+
+body{
+  background:var(--brand-blue);
+  font-family:Roboto,sans-serif;
+  text-transform:uppercase
+}
+
+h1{
+  text-transform:uppercase;
+  font-weight:700;
+  margin:0
+}
+
+p{
+  margin:5px
+}
+
+a{
+  color:#fc5e2f;
+  font-weight:700
+}
+
+.data-viz hgroup{
+  color:#fff;
+  padding:2rem;
+  display:-ms-grid;
+  display:grid;
+  grid-template-columns:55% 40%;
+  grid-column-gap:5vw
+}
+
+.data-viz .map{
+  display:-ms-grid;
+  display:grid;
+  grid-template-columns:15% 85%
+}
+
+.data-viz .map__chart{
+  height:75vh;
+  width:100%
+}
+
+.data-viz .map__legend{
+  width:100%;
+  color:#fff;
+  padding-left:1rem
+}
+
+/*# sourceMappingURL=/style.251b6741.css.map */

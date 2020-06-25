@@ -4,148 +4,167 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BrightAct</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700=swap" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <title>Domestic violence statistics for EU countries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Roboto&display=swap"
+      rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
   </head>
 
   <body class="data-viz">
-    <hgroup>
-      <h1>
-        Domestic Violence by percentage, by EU state
-      </h1>
-      <p class="info__detail">Women who have experienced physical and/or sexual violence by current and/or previous
-        partner, since the age of 15. Data from <a
-          href="https://fra.europa.eu/sites/default/files/fra_uploads/fra-2014-vaw-survey-main-results-apr14_en.pdf"
-          target="blank">FRA research</a> from 2012</p>
-    </hgroup>
+    <div class="title">
+      <hgroup>
+        <h1>
+          One in Three
+        </h1>
+        <p>
+          Women has experienced physical and/or sexual violence since the age of 15
+        </p>
+      </hgroup>
+    </div>
+    
+    
     <div class="map">
       <div id="map-legend" class="map__legend"></div>
       <div id="map-chart" class="map__chart"></div>  
     </div>
+
+    <div class="main-data">
+      <div class="main-data__1">
+        <h1>22%</h1>
+        <h2>of All women</h2>
+        <p>who ever had a partner had experienced physical or sexual violence by a partner</p>
+      </div>
+      <div class="main-data__2">
+        <h1>16.7</h1>
+        <h2>Million</h2>
+        <p>women have experienced physical/sexual violence in the course of 12 months before the survey interviews</p>
+      </div>
+    </div>
+
+    <div class="slider-wrapper">
+      <h2>differences between eu states</h2>
+      <div class="slider">
+        <ul class="slider__text">
+          <li>
+            <img src="./assets/mic.svg">
+            <hgroup>
+              <h3>Private matter</h3>
+              <p>In societies in which intimate partner violence is considered largely a private matter incidents of violence
+                against
+                women are unlikely to be shared with family and friends and are also rarely reported to the police. Such reticence
+                may
+                inhibit talking to survey interviewers.
+              </p>
+            </hgroup>
+          </li>
+        </ul>
+        <div class="slider__nav">
+          <a href="#">
+            <img src="./assets/previous.svg" />
+          </a>
+          <a href="#">
+            <img src="./assets/next.svg" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="covid-data">
+      <div class="covid-data__chart">
+        <div class="chart__heading">
+          <h2>increase in hotline calls</h2>
+          <h2>-during covid19 crisis, worldwide</h2>
+        </div>
+        <div class="chart"></div>
+      </div>
+
+      <div class="covid-data__main">
+        <div class="main__who">
+          <div class="main__title">
+            <h2>Who</h2>
+          </div>
+          <div class="main__info">
+            <h3>Emergency Calls</h3>
+            <by>by women subjected to violence by their intimate partners jumped</p>
+            <h1>60%</h1>
+            <p>across European member states in April, compared to the same period last year.</p>
+            <h3>online Inquiries</h3>
+            <p>to violence prevention support hotlines have increased up to</p>
+            <h3>five times.</h3>
+          </div>
+        </div>
+
+        <div class="main__hubei">
+          <div class="hubei__chart">
+            <div class="hubei__title">
+              <p>in the</p>
+              <h3>Hubei province of China</h3>
+              <p>domestic violence reports to police more than</p>
+              <h3>Tripled</h3>
+              <p>compared to the previous year</p>
+            </div>
+            <div class="hubei__chart"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="covid-data__countries">
+        <div class="country">
+          <div class="country__top--text">
+            <p>Christophe Castaner, interior minister</p>
+            <h3>France</h3>
+          </div>
+          <div class="country__top--img margin">
+            <img src="./assets/danger.svg">
+          </div>
+          <div class="country__bottom">
+            <p>Reports of domestic violence across the country have jumped by more than</p>
+            <h1>30%</h1>
+          </div>
+        </div>
+
+        <div class="country">
+          <div class="country__top--text">
+            <p>Chiara Sainaghi, Fondazione Somaschi</p>
+            <h3>Italy</h3>
+          </div>
+          <div class="country__top--img margin">
+            <img src="./assets/graph.svg">
+          </div>
+          <div class="country__bottom">
+            <p>We are seeing a</p>
+            <h3>Drastic fall</h3>
+            <p>in calls by women because they have less freedom in this situation of forced confinement</p>
+          </div>
+        </div>
+
+        <div class="country">
+          <div class="country__top--text">
+            <p>Equality Ministry</p>
+            <h3>Spain</h3>
+          </div>
+          <div class="country__top--img">
+            <img src="./assets/wifi.svg">
+          </div>
+          <div class="country__bottom">
+            <h1>270%</h1>
+            <p>increase in online consultations since the lockdown began</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+    <footer>
+      <p>Women who have experienced physical and/or sexual violence by current and/or previous
+        partner, since the age of 15.
+      </p>
+      <p>Data collection was made in 2012 via phone interviews by FRA. For the full results of the survey<a
+          href="https://fra.europa.eu/sites/default/files/fra_uploads/fra-2014-vaw-survey-main-results-apr14_en.pdf"
+          target="blank">check the report</a>
+      </p>
+      <p>
+        Unless otherwise noted, all data is for EU member states
+      </p>
+    </footer>
   </body>
-
-  <!-- Amcharts  -->
-  <script src="https://www.amcharts.com/lib/4/core.js"></script>
-  <script src="https://www.amcharts.com/lib/4/maps.js"></script>
-  <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
-  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
-  <script type="text/javascript">
-    am4core.ready(function() {
-      am4core.useTheme(am4themes_animated);
-      var map = am4core.create('map-chart', am4maps.MapChart);
-      map.geodata = am4geodata_worldLow;
-      map.projection = new am4maps.projections.Miller();
-
-      map.homeZoomLevel = 3;
-      map.homeGeoPoint = {
-        latitude: 52,
-        longitude: 10
-      };
-
-      // Polygon Series
-      var polygonSeries = map.series.push(new am4maps.MapPolygonSeries());;
-      polygonSeries.useGeodata = true;
-      polygonSeries.exclude = ['AQ'];
-      polygonSeries.nonScalingStroke = true;
-      polygonSeries.strokeWidth = 0.1;
-      polygonSeries.calculateVisualCenter = true;
-
-      // Configure map visual
-      var polygonTemplate = polygonSeries.mapPolygons.template;
-      polygonTemplate.fill = am4core.color('#454553');
-      polygonTemplate.stroke = am4core.color('#A4A4A9');
-
-      map.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#35353F");
-      map.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 1;
-
-      // bubbles and external data
-      var imageSeries = map.series.push(new am4maps.MapImageSeries());
-      imageSeries.dataSource.url = 'https://team-shadowworkers.github.io/brighact-dataviz/data/violence_by_country.json'; 
-      imageSeries.dataFields.value = "value";
-
-      // Configure bubble visual
-      var imageTemplate = imageSeries.mapImages.template;
-      imageTemplate.nonScaling = true;
-      imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong>";
-      
-      // "<br />For contact organization, got to www.example.com or call + 359 876 257 515";
-      imageSeries.tooltip.getFillFromObject = false;
-      imageSeries.tooltip.background.fill = am4core.color("#35353F");
-      imageSeries.tooltip.label.fill = am4core.color("#fff");
-
-      var circle = imageTemplate.createChild(am4core.Circle);
-      circle.fillOpacity = 0.7;
-      circle.fill = am4core.color("#FC5E2F");
-      
-      imageSeries.heatRules.push({
-        "target": circle,
-        "property": "radius",
-        "min": 8,
-        "max": 35,
-        "dataField": "value"
-      })
-      
-      // Add latitude and longitude
-      imageTemplate.adapter.add("latitude", function (latitude, target) {
-        var polygon = polygonSeries.getPolygonById(target.dataItem.dataContext.id);
-        if (polygon) {
-          return polygon.visualLatitude;
-        }
-        return latitude;
-      })
-
-      imageTemplate.adapter.add("longitude", function (longitude, target) {
-        var polygon = polygonSeries.getPolygonById(target.dataItem.dataContext.id);
-        if (polygon) {
-          return polygon.visualLongitude;
-        }
-        return longitude;
-      })
-      
-      // Zoom
-      map.zoomControl = new am4maps.ZoomControl();
-      
-      // Hover on country
-      var hoverState = polygonTemplate.states.create('hover');
-      hoverState.properties.fill = am4core.color('#35353F');
-
-      // Legend
-      var legendContainer = am4core.create("map-legend", am4core.Container);
-      legendContainer.width = am4core.percent(100);
-      legendContainer.height = am4core.percent(100);
-
-      map.legend = new am4maps.Legend();
-      map.legend.dataSource.url = imageSeries.dataSource.url;
-      map.legend.position = "absolute";
-      map.legend.parent = legendContainer;
-      map.legend.scrollable = true;
-      map.legend.maxWidth = "100";
-      map.legend.markers.template.disabled = true;
-
-      map.legend.labels.template.text = "{country}:";
-      map.legend.labels.template.fill = am4core.color('#fff');
-      map.legend.valueLabels.template.text = "{value}%";
-      map.legend.valueLabels.template.fill = am4core.color('#FC5E2F');
-      map.legend.valueLabels.template.align = "left";
-      map.legend.valueLabels.template.textAlign = "start";
-      map.legend.itemContainers.template.paddingTop = 5;
-      map.legend.itemContainers.template.paddingBottom = 5;
-      map.legend.itemContainers.template.togglable = false;
-      
-      map.legend.itemContainers.template.events.on("toggled", function(event) {
-        var item = event.target;
-        var polygonItem = polygonSeries.getPolygonById(item.dataItem.dataContext.id);
-        
-        if (item.isActive) {
-          map.zoomToRectangle(polygonItem.dataItem.north, polygonItem.dataItem.east, polygonItem.dataItem.south, polygonItem.dataItem.west, true, 1);
-          polygonItem.isHover = true;
-        
-        } else if (!item.isActive) {
-          map.goHome(500); // srsly haha
-        }
-      })
-    })
-  </script>
 </html>
