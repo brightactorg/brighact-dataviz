@@ -109603,7 +109603,7 @@ am4core.ready(function () {
 
   var imageTemplate = imageSeries.mapImages.template;
   imageTemplate.nonScaling = true;
-  imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong> of women";
+  imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong>";
   imageSeries.tooltip.getFillFromObject = false;
   imageSeries.tooltip.background.fill = am4core.color("#000");
   imageSeries.tooltip.label.fill = am4core.color("#F7F0ED");
@@ -109913,7 +109913,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54099" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50198" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

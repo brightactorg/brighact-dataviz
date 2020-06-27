@@ -42,7 +42,7 @@ am4core.ready(function() {
   // Configure bubble visual
   var imageTemplate = imageSeries.mapImages.template;
   imageTemplate.nonScaling = true;
-  imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong> of women";
+  imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong>";
   
   imageSeries.tooltip.getFillFromObject = false;
   imageSeries.tooltip.background.fill = am4core.color("#000");
