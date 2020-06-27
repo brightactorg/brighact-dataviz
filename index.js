@@ -1,9 +1,24 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
+import * as am4charts from "@amcharts/amcharts4/charts";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 import data from './data/violence_by_country.json';
+
+let slides = [...document.getElementsByClassName('slides')];
+const arrow = document.getElementById('next');
+
+arrow.addEventListener('click', function (e) {
+  let currentSlide = slides.find(item => item.dataset.status === 'active');
+  let currentIndex = slides.indexOf(currentSlide);
+  
+  if (currentIndex >= 0 && currentIndex < slides.length) {
+    let nextSlide = slides[currentIndex + 1] || slides[0];
+    currentSlide.removeAttribute('data-status');
+    nextSlide.setAttribute('data-status', 'active');
+  } 
+});
 
 am4core.ready(function() {
   am4core.useTheme(am4themes_animated);
@@ -122,4 +137,31 @@ am4core.ready(function() {
       map.goHome(500); // srsly haha
     }
   })
+
+  let hubeiChart = am4core.create("hubei__chart", am4charts.XYChart);
+  hubeiChart.data = [
+    {
+      date: "February 2019",
+      cases: 47
+    },
+    {
+      date: "February 2020",
+      cases: 162
+    }];
+
+    let categoryAxis = hubeiChart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "date";
+    let valueAxis = hubeiChart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.renderer.minGridDistance = 100;
+    categoryAxis.renderer.grid.template.disabled = true;
+    valueAxis.renderer.grid.template.disabled = true;
+
+    let series = hubeiChart.series.push(new am4charts.ColumnSeries());
+    series.dataFields.valueY = "cases";
+    series.dataFields.categoryX = "date";
+    series.columns.template.fill = am4core.color("#FF5933");
+    series.columns.template.stroke = am4core.color("#FF5933");
+    series.columns.template.tooltipText = "{valueY} cases";
+    series.tooltip.autoTextColor = false;
+    series.tooltip.label.fill = am4core.color("#FFFFFF");
 })

@@ -27,7 +27,8 @@ body{
   --text-opacity:1;
   color:#000;
   color:rgba(0, 0, 0, var(--text-opacity));
-  margin:0
+  margin:0;
+  overflow-x:hidden
 }
 
 h1{
@@ -163,17 +164,20 @@ ul{
 
 @media (min-width: 768px){
   .slider{
-    grid-template-columns:3fr 1fr
+    grid-template-columns:2fr 1fr
   }
 }
 
-.slider__text>li{
-  display:flex;
-  flex-direction:row
+.slider__text{
+  padding-top:1.5rem;
+  padding-bottom:1.5rem;
+  padding-left:4rem;
+  padding-right:4rem;
+  display:grid
 }
 
 .slider__text>li>hgroup{
-  align-self:center;
+  align-self:flex-end;
   flex:1 1 0%
 }
 
@@ -183,17 +187,37 @@ ul{
   margin-right:3rem
 }
 
+.slides{
+  grid-column:1;
+  grid-row:1;
+  align-self:center;
+  opacity:0;
+  transform:translateX(-150%);
+  transition:all .9s ease-in-out;
+  background:var(--brand-blue)
+}
+
+.slides[data-status=active]{
+  opacity:1;
+  transform:translateX(0);
+  transition:all .9s ease-in-out
+}
+
 .slider__nav{
   display:flex;
   align-items:flex-end
 }
 
-.slider__nav a:first-child{
-  padding:0.5rem
+.slider__nav button{
+  --bg-opacity:1;
+  background-color:#FF5933;
+  background-color:rgba(255, 89, 51, var(--bg-opacity));
+  border-width:0
 }
 
-.slider__nav a:last-child{
-  padding:1rem
+.slider__nav button:focus{
+  border-width:0;
+  outline:0
 }
 
 .covid-data__chart .chart__heading{
@@ -242,6 +266,13 @@ ul{
   display:inline;
   padding:0.5rem;
   line-height:1.625
+}
+
+.hubei__info{
+  display:grid;
+  grid-template-rows:1fr 2fr;
+  grid-gap:5rem;
+  gap:5rem
 }
 
 .covid-data__countries{
