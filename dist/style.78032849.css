@@ -27,7 +27,8 @@ body{
   --text-opacity:1;
   color:#000;
   color:rgba(0, 0, 0, var(--text-opacity));
-  margin:0
+  margin:0;
+  overflow-x:hidden
 }
 
 h1{
@@ -163,17 +164,20 @@ ul{
 
 @media (min-width: 768px){
   .slider{
-    grid-template-columns:3fr 1fr
+    grid-template-columns:2fr 1fr
   }
 }
 
-.slider__text>li{
-  display:flex;
-  flex-direction:row
+.slider__text{
+  padding-top:1.5rem;
+  padding-bottom:1.5rem;
+  padding-left:4rem;
+  padding-right:4rem;
+  display:grid
 }
 
 .slider__text>li>hgroup{
-  align-self:center;
+  align-self:flex-end;
   flex:1 1 0%
 }
 
@@ -183,17 +187,33 @@ ul{
   margin-right:3rem
 }
 
-.slider__nav{
-  display:flex;
-  align-items:flex-end
+.slides{
+  grid-column:1;
+  grid-row:1;
+  align-self:center;
+  opacity:0;
+  transform:translateX(-150%);
+  transition:all .9s ease-in-out;
+  background:var(--brand-blue)
 }
 
-.slider__nav a:first-child{
-  padding:0.5rem
+.slides[data-status=active]{
+  opacity:1;
+  transform:translateX(0);
+  transition:all .9s ease-in-out
 }
 
-.slider__nav a:last-child{
-  padding:1rem
+.slider__nav button{
+  align-items:flex-end;
+  --bg-opacity:1;
+  background-color:#FF5933;
+  background-color:rgba(255, 89, 51, var(--bg-opacity));
+  border-width:0
+}
+
+.slider__nav button:focus{
+  border-width:0;
+  outline:0
 }
 
 .covid-data__chart .chart__heading{

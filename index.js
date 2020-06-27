@@ -5,6 +5,20 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 import data from './data/violence_by_country.json';
 
+let slides = [...document.getElementsByClassName('slides')];
+const arrow = document.getElementById('next');
+
+arrow.addEventListener('click', function (e) {
+  let currentSlide = slides.find(item => item.dataset.status === 'active');
+  let currentIndex = slides.indexOf(currentSlide);
+  
+  if (currentIndex >= 0 && currentIndex < slides.length) {
+    let nextSlide = slides[currentIndex + 1] || slides[0];
+    currentSlide.removeAttribute('data-status');
+    nextSlide.setAttribute('data-status', 'active');
+  } 
+});
+
 am4core.ready(function() {
   am4core.useTheme(am4themes_animated);
   var map = am4core.create('map-chart', am4maps.MapChart);

@@ -5,7 +5,7 @@
 @import "tailwindcss/utilities";
 
 body {
-  @apply bg-lightGrey font-sans text-black m-0;
+  @apply bg-lightGrey font-sans text-black m-0 overflow-x-hidden;
 }
 
 h1 {
@@ -104,32 +104,44 @@ ul {
 
 @screen md {
   .slider {
-    @apply grid-cols-three-to-one;
+    @apply grid-cols-two-thirds;
   }
 }
 
-.slider__text > li {
-  @apply flex flex-row;
+.slider__text {
+  @apply pt-6 pb-6 pl-16 pr-16 grid;
 }
 
 .slider__text > li > hgroup {
-  @apply self-center flex-1;
+  @apply self-end flex-1;
 }
 
 .slider__text > li > img {
   @apply max-w-full opacity-25 mr-12;
 }
 
-.slider__nav {
-  @apply flex items-end;
+.slides {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  opacity: 0;
+  transform: translateX(-150%);
+  transition: all .9s ease-in-out;
+  background: var(--brand-blue);
 }
 
-.slider__nav a:first-child {
-  @apply p-2;
+.slides[data-status='active'] {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .9s ease-in-out;
 }
 
-.slider__nav a:last-child {
-  @apply p-4;
+.slider__nav button{
+  @apply items-end bg-orange border-0;
+}
+
+.slider__nav button:focus {
+  @apply border-0 outline-none;
 }
 
 .covid-data {
