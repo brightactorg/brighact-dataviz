@@ -196,7 +196,6 @@ ul {
   @apply inline p-2 leading-relaxed;
 }
 
-
 .hubei__info {
   @apply grid grid-rows-two-thirds-inverse gap-20;
 }
@@ -305,8 +304,12 @@ ul {
   @apply text-orange;
 }
 
+.type-violence__chart {
+  @apply h-full text-white;
+}
+
 footer {
-  @apply bg-blue text-white p-16;
+  @apply bg-blue text-white pt-24 pl-16 pr-16 pb-16;
 }
 
 /* svgs */
