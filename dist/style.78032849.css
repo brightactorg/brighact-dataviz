@@ -203,8 +203,12 @@ ul{
   transition:all .9s ease-in-out
 }
 
+.slider__nav{
+  display:flex;
+  align-items:flex-end
+}
+
 .slider__nav button{
-  align-items:flex-end;
   --bg-opacity:1;
   background-color:#FF5933;
   background-color:rgba(255, 89, 51, var(--bg-opacity));
@@ -262,6 +266,13 @@ ul{
   display:inline;
   padding:0.5rem;
   line-height:1.625
+}
+
+.hubei__info{
+  display:grid;
+  grid-template-rows:1fr 2fr;
+  grid-gap:5rem;
+  gap:5rem
 }
 
 .covid-data__countries{

@@ -136,8 +136,12 @@ ul {
   transition: all .9s ease-in-out;
 }
 
+.slider__nav {
+  @apply flex items-end;
+}
+
 .slider__nav button{
-  @apply items-end bg-orange border-0;
+  @apply bg-orange border-0;
 }
 
 .slider__nav button:focus {
@@ -190,6 +194,11 @@ ul {
 .main__who h3:last-child,
 .main__hubei h3 {
   @apply inline p-2 leading-relaxed;
+}
+
+
+.hubei__info {
+  @apply grid grid-rows-two-thirds-inverse gap-20;
 }
 
 .covid-data__countries {

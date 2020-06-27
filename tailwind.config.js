@@ -21,6 +21,9 @@ module.exports = {
         'similar-reverse': '1fr 1.2fr',
         'three-indent-half': '0.5fr 2fr 2fr 2fr'
       },
+      gridTemplateRows: {
+        'two-thirds-inverse': '1fr 2fr',
+      },
       fontSize: {
         big: '2rem',
         large: '3rem',
