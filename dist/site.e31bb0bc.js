@@ -109603,7 +109603,7 @@ am4core.ready(function () {
 
   var imageTemplate = imageSeries.mapImages.template;
   imageTemplate.nonScaling = true;
-  imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong>";
+  imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong> of women";
   imageSeries.tooltip.getFillFromObject = false;
   imageSeries.tooltip.background.fill = am4core.color("#000");
   imageSeries.tooltip.label.fill = am4core.color("#F7F0ED");
@@ -109637,10 +109637,11 @@ am4core.ready(function () {
     return longitude;
   }); // Zoom
 
-  map.zoomControl = new am4maps.ZoomControl(); // Hover on country
+  map.zoomControl = new am4maps.ZoomControl();
+  map.chartContainer.wheelable = false; // Hover on country
 
   var hoverState = polygonTemplate.states.create('hover');
-  hoverState.properties.fill = am4core.color("#171AA8"); // Legend
+  hoverState.properties.fill = am4core.color("#D9D1CE"); // Legend
 
   var legendContainer = am4core.create("map-legend", am4core.Container);
   legendContainer.width = am4core.percent(100);
@@ -109660,6 +109661,7 @@ am4core.ready(function () {
   map.legend.valueLabels.template.align = "right";
   map.legend.valueLabels.template.textAlign = "start";
   map.legend.itemContainers.template.paddingTop = 5;
+  map.legend.itemContainers.template.paddingLeft = 0;
   map.legend.itemContainers.template.paddingBottom = 5;
   map.legend.itemContainers.template.togglable = false;
   map.legend.itemContainers.template.events.on("toggled", function (event) {
@@ -109911,7 +109913,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53199" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54099" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

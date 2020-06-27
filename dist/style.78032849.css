@@ -66,7 +66,7 @@ ul{
 }
 
 .title{
-  padding:1rem;
+  padding:3rem;
   display:grid;
   grid-template-columns:repeat(1, minmax(0, 1fr))
 }
@@ -81,11 +81,10 @@ ul{
   color:rgba(255, 89, 51, var(--text-opacity))
 }
 
-@media (min-width: 768px){
-  .title{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    padding:3rem
-  }
+.map__wrapper p{
+  padding-left:3rem;
+  padding-right:3rem;
+  width:50%
 }
 
 .map{
@@ -96,7 +95,7 @@ ul{
   text-transform:uppercase;
   display:-ms-grid;
   display:grid;
-  grid-template-columns:15% 85%
+  grid-template-columns:17% 82%
 }
 
 .map__chart{
@@ -139,7 +138,9 @@ ul{
 }
 
 .slider-wrapper{
-  position:relative
+  position:relative;
+  padding-top:3rem;
+  padding-bottom:3rem
 }
 
 .slider-wrapper h2{
@@ -305,7 +306,7 @@ ul{
   .covid-data__violence{
     padding-left:4rem;
     padding-right:4rem;
-    margin-top:5rem;
+    margin-top:8rem;
     display:grid;
     grid-template-columns:1.2fr 1fr;
     grid-gap:4rem;
@@ -351,6 +352,10 @@ ul{
   }
 }
 
+.violence__percentage li{
+  flex:1 1 0%
+}
+
 .violence__percentage li:first-of-type{
   margin-right:3rem
 }
@@ -393,7 +398,7 @@ footer{
 
 .custom-shape-divider-bottom-1593201417{
   position:absolute;
-  top:0;
+  top:3rem;
   left:0;
   width:100%;
   overflow:hidden;
@@ -416,7 +421,7 @@ footer{
 
 .custom-shape-divider-bottom-1593201757{
   position:absolute;
-  top:-6rem;
+  top:-3rem;
   left:0;
   width:100%;
   overflow:hidden;

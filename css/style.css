@@ -30,7 +30,7 @@ ul {
 }
 
 .title {
-  @apply p-4 grid grid-cols-1;
+  @apply p-12 grid grid-cols-1;
 }
 
 .title p {
@@ -41,18 +41,23 @@ ul {
   @apply text-orange;
 }
 
-@screen md {
+/* @screen md {
   .title {
     @apply grid-cols-2 p-12;
   }
-}
+} */
 
 /* MAP */
+
+.map__wrapper p {
+  @apply pl-12 pr-12 w-1/2;
+}
+
 .map {
   @apply pr-12 pl-8 pt-6 pb-6 uppercase;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 17% 82%;
 }
 
 .map__chart {
@@ -86,7 +91,7 @@ ul {
 }
 
 .slider-wrapper {
-  @apply relative;
+  @apply relative pt-12 pb-12;
 }
 
 .slider-wrapper h2 {
@@ -232,7 +237,7 @@ ul {
 
 @screen md {
   .covid-data__violence {
-    @apply pl-16 pr-16 mt-20 grid grid-cols-similar gap-16;
+    @apply pl-16 pr-16 mt-32 grid grid-cols-similar gap-16;
   }
 }
 
@@ -264,6 +269,9 @@ ul {
   }
 }
 
+.violence__percentage li {
+  @apply flex-1;
+}
 .violence__percentage li:first-of-type {
   @apply mr-12;
 }
@@ -300,7 +308,7 @@ footer {
 
 .custom-shape-divider-bottom-1593201417 {
     position: absolute;
-    top: 0;
+    top: 3rem;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -323,7 +331,7 @@ footer {
 
 .custom-shape-divider-bottom-1593201757 {
     position: absolute;
-    top: -6rem;
+    top: -3rem;
     left: 0;
     width: 100%;
     overflow: hidden;

@@ -42,7 +42,7 @@ am4core.ready(function() {
   // Configure bubble visual
   var imageTemplate = imageSeries.mapImages.template;
   imageTemplate.nonScaling = true;
-  imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong>";
+  imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong> of women";
   
   imageSeries.tooltip.getFillFromObject = false;
   imageSeries.tooltip.background.fill = am4core.color("#000");
@@ -79,10 +79,11 @@ am4core.ready(function() {
   
   // Zoom
   map.zoomControl = new am4maps.ZoomControl();
+  map.chartContainer.wheelable = false;
   
   // Hover on country
   var hoverState = polygonTemplate.states.create('hover');
-  hoverState.properties.fill = am4core.color("#171AA8");
+  hoverState.properties.fill = am4core.color("#D9D1CE");
 
   // Legend
   var legendContainer = am4core.create("map-legend", am4core.Container);
@@ -105,6 +106,7 @@ am4core.ready(function() {
   map.legend.valueLabels.template.align = "right";
   map.legend.valueLabels.template.textAlign = "start";
   map.legend.itemContainers.template.paddingTop = 5;
+  map.legend.itemContainers.template.paddingLeft = 0;
   map.legend.itemContainers.template.paddingBottom = 5;
   map.legend.itemContainers.template.togglable = false;
   
