@@ -138,16 +138,114 @@ am4core.ready(function() {
     }
   })
 
-  let hubeiChart = am4core.create("hubei__chart", am4charts.XYChart);
-  hubeiChart.data = [
+  let violenceChart = am4core.create("type-violence__chart", am4charts.XYChart);
+  violenceChart.data = [
     {
-      date: "February 2019",
-      cases: 47
+      type: "Pushed or shoved",
+      current: 5,
+      previous: 19,
     },
     {
-      date: "February 2020",
-      cases: 162
+      type: "Slapped",
+      current: 4,
+      previous: 15
+    },
+    {
+      type: "Hard object thrown at them",
+      current: 2,
+      previous: 8
+    },
+    {
+      type: "Grabbed or pulled by the hair",
+      current: 2,
+      previous: 10
+    },
+    {
+      type: "Beat with a fist or a hard object, or kicked",
+      current: 1,
+      previous: 9
+    },
+    {
+      type: "Burned",
+      current: 0,
+      previous: 1
+    },
+    {
+      type: "Tried to suffocate or strangle",
+      current: 1,
+      previous: 5
+    },
+    {
+      type: "Cut, stabbed or shot",
+      current: 0,
+      previous: 1
+    },
+    {
+      type: "Beat head against something",
+      current: 1,
+      previous: 5
+    },
+    {
+      type: "Any of the above",
+      current: 7,
+      previous: 24
+    },
+    {
+      type: "Any of the above, excluding ‘pushed or shoved",
+      current: 5,
+      previous: 20
     }];
+
+    let typeViolenceAxis = violenceChart.yAxes.push(new am4charts.CategoryAxis());
+    typeViolenceAxis.dataFields.category = "type";
+    typeViolenceAxis.renderer.cellStartLocation = 0.1;
+    typeViolenceAxis.renderer.cellEndLocation = 0.8;
+
+    let label = typeViolenceAxis.renderer.labels.template;
+    label.wrap = true;
+    label.maxWidth = 320;
+    label.fill = am4core.color("#FFFFFF");
+
+    let valueViolenceAxis = violenceChart.xAxes.push(new am4charts.ValueAxis());
+    valueViolenceAxis.renderer.minGridDistance = 100;
+    typeViolenceAxis.renderer.grid.template.disabled = true;
+    valueViolenceAxis.renderer.grid.template.disabled = true;
+    valueViolenceAxis.renderer.minGridDistance = 10;
+
+    let series1 = violenceChart.series.push(new am4charts.ColumnSeries());
+    series1.dataFields.valueX = "current";
+    series1.dataFields.categoryY = "type";
+    series1.columns.template.fill = am4core.color("#FF5933");
+    series1.columns.template.stroke = am4core.color("#FF5933");
+    series1.columns.template.tooltipText = "Current partner: [bold]{valueX}[/]%";
+    series1.tooltip.autoTextColor = false;
+    series1.tooltip.label.fill = am4core.color("#FFFFFF");
+    series1.name = "Current";
+    series1.stacked = true;
+
+    let series2 = violenceChart.series.push(new am4charts.ColumnSeries());
+    series2.dataFields.valueX = "previous";
+    series2.dataFields.categoryY = "type";
+    series2.columns.template.fill = am4core.color("#fff");
+    series2.columns.template.stroke = am4core.color("#fff");
+    series2.columns.template.tooltipText = "Previous partner: [bold]{valueX}[/]%";
+    series2.tooltip.autoTextColor = false;
+    series2.tooltip.label.fill = am4core.color("#171AA8");
+    series2.name = "Previous";
+    series2.stacked = true;
+    series2.columns.template.width = am4core.percent(80);
+
+    // Hubei Province Chart
+    let hubeiChart = am4core.create("hubei__chart", am4charts.XYChart);
+    hubeiChart.data = [{
+        date: "February 2019",
+        cases: 47
+      },
+      {
+        date: "February 2020",
+        cases: 162
+      }
+    ];
 
     let categoryAxis = hubeiChart.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = "date";

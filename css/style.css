@@ -196,7 +196,6 @@ ul {
   @apply inline p-2 leading-relaxed;
 }
 
-
 .hubei__info {
   @apply grid grid-rows-two-thirds-inverse gap-20;
 }
@@ -303,6 +302,10 @@ ul {
 
 .violence__percentage h1 {
   @apply text-orange;
+}
+
+.type-violence__chart {
+  @apply h-full text-white;
 }
 
 footer {

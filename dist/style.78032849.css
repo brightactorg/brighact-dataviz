@@ -404,6 +404,13 @@ ul{
   color:rgba(255, 89, 51, var(--text-opacity))
 }
 
+.type-violence__chart{
+  height:100%;
+  --text-opacity:1;
+  color:#fff;
+  color:rgba(255, 255, 255, var(--text-opacity))
+}
+
 footer{
   --bg-opacity:1;
   background-color:#171AA8;
