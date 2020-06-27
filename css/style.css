@@ -113,7 +113,11 @@ ul {
 }
 
 .slider__text > li > hgroup {
-  @apply self-center;
+  @apply self-center flex-1;
+}
+
+.slider__text > li > img {
+  @apply max-w-full opacity-25 mr-12;
 }
 
 .slider__nav {

@@ -173,7 +173,14 @@ ul{
 }
 
 .slider__text>li>hgroup{
-  align-self:center
+  align-self:center;
+  flex:1 1 0%
+}
+
+.slider__text>li>img{
+  max-width:100%;
+  opacity:0.25;
+  margin-right:3rem
 }
 
 .slider__nav{
