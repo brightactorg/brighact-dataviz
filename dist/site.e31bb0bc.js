@@ -109654,9 +109654,10 @@ am4core.ready(function () {
   map.legend.markers.template.disabled = true;
   map.legend.labels.template.text = "{country}:";
   map.legend.labels.template.fill = am4core.color("#000");
-  map.legend.valueLabels.template.text = "{value}%";
+  map.legend.labels.template.textTransform = "uppercase";
+  map.legend.valueLabels.template.text = "[bold]{value}%[/]";
   map.legend.valueLabels.template.fill = am4core.color("#171AA8");
-  map.legend.valueLabels.template.align = "left";
+  map.legend.valueLabels.template.align = "right";
   map.legend.valueLabels.template.textAlign = "start";
   map.legend.itemContainers.template.paddingTop = 5;
   map.legend.itemContainers.template.paddingBottom = 5;
@@ -109910,7 +109911,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56797" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53199" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

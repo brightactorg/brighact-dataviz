@@ -17,6 +17,7 @@ module.exports = {
         'two-thirds': '2fr 1fr',
         'tho-thirds-inverse': '1fr 2fr',
         'three-to-one': '3fr 1fr',
+        'similar': '1.2fr 1fr',
         'similar-reverse': '1fr 1.2fr',
         'three-indent-half': '0.5fr 2fr 2fr 2fr'
       },

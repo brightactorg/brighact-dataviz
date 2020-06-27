@@ -99,9 +99,10 @@ am4core.ready(function() {
 
   map.legend.labels.template.text = "{country}:";
   map.legend.labels.template.fill = am4core.color("#000");
-  map.legend.valueLabels.template.text = "{value}%";
+  map.legend.labels.template.textTransform = "uppercase";
+  map.legend.valueLabels.template.text = "[bold]{value}%[/]";
   map.legend.valueLabels.template.fill = am4core.color("#171AA8");
-  map.legend.valueLabels.template.align = "left";
+  map.legend.valueLabels.template.align = "right";
   map.legend.valueLabels.template.textAlign = "start";
   map.legend.itemContainers.template.paddingTop = 5;
   map.legend.itemContainers.template.paddingBottom = 5;

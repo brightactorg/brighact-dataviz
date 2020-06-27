@@ -5,7 +5,7 @@
 @import "tailwindcss/utilities";
 
 body {
-  @apply bg-lightGrey font-sans text-black;
+  @apply bg-lightGrey font-sans text-black m-0;
 }
 
 h1 {
@@ -43,13 +43,13 @@ ul {
 
 @screen md {
   .title {
-    @apply grid-cols-2;
+    @apply grid-cols-2 p-12;
   }
 }
 
 /* MAP */
 .map {
-  @apply pr-12 pl-12 pt-6 pb-6;
+  @apply pr-12 pl-8 pt-6 pb-6 uppercase;
   display: -ms-grid;
   display: grid;
   grid-template-columns: 15% 85%;
@@ -85,8 +85,12 @@ ul {
   }
 }
 
+.slider-wrapper {
+  @apply relative;
+}
+
 .slider-wrapper h2 {
-  @apply pl-16 pb-6;
+  @apply pl-12 pt-12 pb-6;
 }
 
 .slider {
@@ -119,11 +123,9 @@ ul {
   @apply p-4;
 }
 
-
 .covid-data {
 
 }
-
 
 .covid-data__chart .chart__heading {
   @apply p-12;
@@ -175,14 +177,18 @@ ul {
   
 @screen md {
   .covid-data__countries {
-    @apply grid grid-cols-three-indent-half gap-16;
+    @apply grid grid-cols-three-indent-half gap-20;
   }
 }
 
 .country {
-  @apply grid grid-cols-tho-thirds-inverse;
+  @apply grid grid-cols-tho-thirds-inverse grid-rows-2;
   grid-template-areas: "text icon"
   ". stats";
+}
+
+.country img {
+  max-width: 100%;
 }
 
 .country:first-of-type {
@@ -191,11 +197,6 @@ ul {
 
 .country__top--text {
   grid-area: text;
-  height: 5rem;
-}
-
-.country__top--img.margin {
-  @apply ml-4 mt-4;
 }
 
 .country__bottom {
@@ -218,5 +219,171 @@ ul {
 
 .country__bottom h1:first-of-type,
 .country__bottom p:first-of-type {
-  @apply pt-1;
+  @apply pt-4;
+}
+
+/* .country__bottom.margin {
+  @apply mt-8;
+} */
+
+.covid-data__violence {
+  @apply bg-blue text-white p-6 relative;
+}
+
+@screen md {
+  .covid-data__violence {
+    @apply pl-16 pr-16 mt-20 grid grid-cols-similar gap-16;
+  }
+}
+
+@screen md {
+  .violence__reports hgroup {
+    border-bottom: 2px solid white;
+  }
+}
+
+.violence__reports h2 {
+  @apply inline text-orange mr-2;
+}
+
+.violence__shame {
+  @apply pt-6 pb-10;
+}
+
+.violence__shame h3:first-of-type {
+  @apply inline mr-2 ml-2;
+}
+
+.violence__shame h3:nth-child(2) {
+  @apply text-orange;
+}
+
+@screen md {
+  .violence__percentage {
+    @apply flex flex-row;
+  }
+}
+
+.violence__percentage li:first-of-type {
+  @apply mr-12;
+}
+
+.violence__percentage h1 {
+  @apply text-orange;
+}
+
+footer {
+  @apply bg-blue text-white p-16;
+}
+
+/* svgs */
+
+.custom-shape-divider-top-1593201312 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1593201312 svg {
+    position: relative;
+    display: block;
+    width: calc(135% + 1.3px);
+    height: 204px;
+}
+
+.custom-shape-divider-top-1593201312 .shape-fill {
+    fill: #FF5933;
+}
+
+.custom-shape-divider-bottom-1593201417 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+    opacity: .5;
+}
+
+.custom-shape-divider-bottom-1593201417 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 140px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1593201417 .shape-fill {
+    fill: #FF5933;
+}
+
+.custom-shape-divider-bottom-1593201757 {
+    position: absolute;
+    top: -6rem;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -2;
+}
+
+.custom-shape-divider-bottom-1593201757 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 245px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1593201757 .shape-fill {
+    fill: #FF9C66;
+}
+
+.custom-shape-divider-bottom-1593202295 {
+    position: absolute;
+    left: 0;
+    top: -4rem;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: 0;
+    opacity: .5;
+}
+
+.custom-shape-divider-bottom-1593202295 svg {
+    position: relative;
+    display: block;
+    width: calc(177% + 1.3px);
+    height: 72px;
+}
+
+.custom-shape-divider-bottom-1593202295 .shape-fill {
+    fill: #171AA8;
+}
+
+.custom-shape-divider-bottom-1593202630 {
+    position: absolute;
+    top: -14.3rem;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: -1;
+}
+
+.custom-shape-divider-bottom-1593202630 svg {
+    position: relative;
+    display: block;
+    width: calc(217% + 1.3px);
+    height: 235px;
+}
+
+.custom-shape-divider-bottom-1593202630 .shape-fill {
+    fill: #7854F2;
 }
