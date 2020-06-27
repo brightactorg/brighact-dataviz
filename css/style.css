@@ -309,7 +309,7 @@ ul {
 }
 
 footer {
-  @apply bg-blue text-white p-16;
+  @apply bg-blue text-white pt-24 pl-16 pr-16 pb-16;
 }
 
 /* svgs */

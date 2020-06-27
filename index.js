@@ -205,12 +205,14 @@ am4core.ready(function() {
     label.wrap = true;
     label.maxWidth = 320;
     label.fill = am4core.color("#FFFFFF");
+    label.padding(15, 20, 5, 0);
 
     let valueViolenceAxis = violenceChart.xAxes.push(new am4charts.ValueAxis());
     valueViolenceAxis.renderer.minGridDistance = 100;
     typeViolenceAxis.renderer.grid.template.disabled = true;
     valueViolenceAxis.renderer.grid.template.disabled = true;
     valueViolenceAxis.renderer.minGridDistance = 10;
+    valueViolenceAxis.renderer.labels.template.disabled = true;
 
     let series1 = violenceChart.series.push(new am4charts.ColumnSeries());
     series1.dataFields.valueX = "current";

@@ -418,7 +418,10 @@ footer{
   --text-opacity:1;
   color:#fff;
   color:rgba(255, 255, 255, var(--text-opacity));
-  padding:4rem
+  padding-top:6rem;
+  padding-left:4rem;
+  padding-right:4rem;
+  padding-bottom:4rem
 }
 
 .custom-shape-divider-top-1593201312{
