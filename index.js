@@ -199,7 +199,7 @@ am4core.ready(function() {
 
     let typeViolenceAxis = violenceChart.yAxes.push(new am4charts.CategoryAxis());
     typeViolenceAxis.dataFields.category = "type";
-    typeViolenceAxis.renderer.cellStartLocation = 0.1;
+    typeViolenceAxis.renderer.cellStartLocation = 0.2;
     typeViolenceAxis.renderer.cellEndLocation = 0.8;
 
     let label = typeViolenceAxis.renderer.labels.template;
