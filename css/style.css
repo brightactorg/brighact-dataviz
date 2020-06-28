@@ -1,6 +1,4 @@
 @import "tailwindcss/base";
-
-@import './utils/variables.css';
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
@@ -131,7 +129,6 @@ button {
   opacity: 0;
   transform: translateX(-150%);
   transition: all .9s ease-in-out;
-  background: var(--brand-blue);
 }
 
 .slides[data-status='active'] {

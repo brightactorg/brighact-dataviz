@@ -233,7 +233,6 @@ am4core.ready(function() {
     currentLabel.label.dx = 10;
     currentLabel.label.fill = am4core.color('#fff');
 
-
     let series2 = violenceChart.series.push(new am4charts.ColumnSeries());
     series2.dataFields.valueX = "previous";
     series2.dataFields.categoryY = "type";
@@ -254,6 +253,10 @@ am4core.ready(function() {
     previousLabel.label.horizontalCenter = "left";
     previousLabel.label.dx = 10;
     previousLabel.label.fill = am4core.color('#fff');
+
+    violenceChart.legend = new am4maps.Legend();
+    // violenceChart.legend.position = "top";
+    violenceChart.legend.labels.template.fill = am4core.color("#fff");
 
     // Hubei Province Chart
     let hubeiChart = am4core.create("hubei__chart", am4charts.XYChart);

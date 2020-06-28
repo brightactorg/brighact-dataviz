@@ -12,8 +12,6 @@
   "devDependencies": {
     "autoprefixer": "^9.8.0",
     "postcss-easy-import": "^3.0.0",
-    "postcss-mixins": "^6.2.3",
-    "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^1.4.6"
   },
   "scripts": {
@@ -38,10 +36,6 @@
       "postcss-easy-import": {},
       "autoprefixer": {},
       "cssnano": {},
-      "postcss-preset-env": {
-        "stage": 0
-      },
-      "postcss-mixins": {},
       "tailwindcss": {}
     }
   }

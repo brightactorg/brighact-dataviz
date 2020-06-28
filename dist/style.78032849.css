@@ -1,20 +1,5 @@
 @tailwind base;
 
-:root{
-  --tiny:.5rem;
-  --small:1rem;
-  --medium:1.5rem;
-  --big:2rem;
-  --large:2.5rem;
-  --huge:4.5rem;
-  --xxl:5rem;
-  --hugest:8rem;
-  --max:10rem;
-  --max-width-large:70rem;
-  --max-width-big:61.50rem;
-  --max-width-mid:50rem;
-  --max-width-small:15rem
-}
 @tailwind components;
 
 @tailwind utilities;
@@ -197,8 +182,7 @@ button{
   align-self:center;
   opacity:0;
   transform:translateX(-150%);
-  transition:all .9s ease-in-out;
-  background:var(--brand-blue)
+  transition:all .9s ease-in-out
 }
 
 .slides[data-status=active]{
