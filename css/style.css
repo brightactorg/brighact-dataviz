@@ -29,6 +29,10 @@ ul {
   @apply p-0;
 }
 
+button {
+  @apply cursor-pointer;
+}
+
 .title {
   @apply p-12 grid grid-cols-1;
 }
@@ -309,7 +313,7 @@ ul {
 }
 
 footer {
-  @apply bg-blue text-white pt-24 pl-16 pr-16 pb-16;
+  @apply bg-blue text-white pt-32 pl-16 pr-16 pb-6;
 }
 
 /* svgs */
