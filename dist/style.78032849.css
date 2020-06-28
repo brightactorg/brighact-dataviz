@@ -66,6 +66,10 @@ ul{
   padding:0
 }
 
+button{
+  cursor:pointer
+}
+
 .title{
   padding:3rem;
   display:grid;
@@ -418,10 +422,10 @@ footer{
   --text-opacity:1;
   color:#fff;
   color:rgba(255, 255, 255, var(--text-opacity));
-  padding-top:6rem;
+  padding-top:8rem;
   padding-left:4rem;
   padding-right:4rem;
-  padding-bottom:4rem
+  padding-bottom:1.5rem
 }
 
 .custom-shape-divider-top-1593201312{

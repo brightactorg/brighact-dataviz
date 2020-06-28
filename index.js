@@ -141,37 +141,17 @@ am4core.ready(function() {
   let violenceChart = am4core.create("type-violence__chart", am4charts.XYChart);
   violenceChart.data = [
     {
-      type: "Pushed or shoved",
+      type: "Any of the above, excluding pushed or shoved",
       current: 5,
-      previous: 19,
+      previous: 20
     },
     {
-      type: "Slapped",
-      current: 4,
-      previous: 15
+      type: "Any of the above",
+      current: 7,
+      previous: 24
     },
     {
-      type: "Hard object thrown at them",
-      current: 2,
-      previous: 8
-    },
-    {
-      type: "Grabbed or pulled by the hair",
-      current: 2,
-      previous: 10
-    },
-    {
-      type: "Beat with a fist or a hard object, or kicked",
-      current: 1,
-      previous: 9
-    },
-    {
-      type: "Burned",
-      current: 0,
-      previous: 1
-    },
-    {
-      type: "Tried to suffocate or strangle",
+      type: "Beat head against something",
       current: 1,
       previous: 5
     },
@@ -181,20 +161,41 @@ am4core.ready(function() {
       previous: 1
     },
     {
-      type: "Beat head against something",
+      type: "Tried to suffocate or strangle",
       current: 1,
       previous: 5
     },
     {
-      type: "Any of the above",
-      current: 7,
-      previous: 24
+      type: "Burned",
+      current: 0,
+      previous: 1
     },
     {
-      type: "Any of the above, excluding ‘pushed or shoved",
+      type: "Beat with a fist or a hard object, or kicked",
+      current: 1,
+      previous: 9
+    },
+    {
+      type: "Grabbed or pulled by the hair",
+      current: 2,
+      previous: 10
+    },
+    {
+      type: "Hard object thrown at them",
+      current: 2,
+      previous: 8
+    },
+    {
+      type: "Slapped",
+      current: 4,
+      previous: 15
+    },
+    {
+      type: "Pushed or shoved",
       current: 5,
-      previous: 20
-    }];
+      previous: 19,
+    },
+];
 
     let typeViolenceAxis = violenceChart.yAxes.push(new am4charts.CategoryAxis());
     typeViolenceAxis.dataFields.category = "type";
@@ -203,15 +204,14 @@ am4core.ready(function() {
 
     let label = typeViolenceAxis.renderer.labels.template;
     label.wrap = true;
-    label.maxWidth = 320;
+    label.maxWidth = 220;
     label.fill = am4core.color("#FFFFFF");
-    label.padding(15, 20, 5, 0);
+    label.padding(10, 20, 5, 0);
 
     let valueViolenceAxis = violenceChart.xAxes.push(new am4charts.ValueAxis());
-    valueViolenceAxis.renderer.minGridDistance = 100;
+    valueViolenceAxis.renderer.minGridDistance = 80;
     typeViolenceAxis.renderer.grid.template.disabled = true;
     valueViolenceAxis.renderer.grid.template.disabled = true;
-    valueViolenceAxis.renderer.minGridDistance = 10;
     valueViolenceAxis.renderer.labels.template.disabled = true;
 
     let series1 = violenceChart.series.push(new am4charts.ColumnSeries());
@@ -223,7 +223,16 @@ am4core.ready(function() {
     series1.tooltip.autoTextColor = false;
     series1.tooltip.label.fill = am4core.color("#FFFFFF");
     series1.name = "Current";
-    series1.stacked = true;
+    // series1.stacked = true;
+
+    let currentLabel = series1.bullets.push(new am4charts.LabelBullet());
+    currentLabel.label.text = "{valueX}%";
+    currentLabel.label.truncate = false;
+    currentLabel.label.hideOversized = false;
+    currentLabel.label.horizontalCenter = "left";
+    currentLabel.label.dx = 10;
+    currentLabel.label.fill = am4core.color('#fff');
+
 
     let series2 = violenceChart.series.push(new am4charts.ColumnSeries());
     series2.dataFields.valueX = "previous";
@@ -234,8 +243,17 @@ am4core.ready(function() {
     series2.tooltip.autoTextColor = false;
     series2.tooltip.label.fill = am4core.color("#171AA8");
     series2.name = "Previous";
-    series2.stacked = true;
-    series2.columns.template.width = am4core.percent(80);
+    // series2.stacked = true;
+   // series2.columns.template.width = am4core.percent(60);
+
+    let previousLabel = series2.bullets.push(new am4charts.LabelBullet());
+    previousLabel.label.text = "{valueX}%";
+    previousLabel.label.truncate = false;
+    previousLabel.label.hideOversized = false;
+    previousLabel.label.hideOversized = false;
+    previousLabel.label.horizontalCenter = "left";
+    previousLabel.label.dx = 10;
+    previousLabel.label.fill = am4core.color('#fff');
 
     // Hubei Province Chart
     let hubeiChart = am4core.create("hubei__chart", am4charts.XYChart);
@@ -264,4 +282,9 @@ am4core.ready(function() {
     series.columns.template.tooltipText = "{valueY} cases";
     series.tooltip.autoTextColor = false;
     series.tooltip.label.fill = am4core.color("#FFFFFF");
+
+    let valueLabel = series.bullets.push(new am4charts.LabelBullet());
+    valueLabel.label.text = "{valueY} cases";
+    valueLabel.label.fill = am4core.color('#fff');
+    valueLabel.label.dy = 15;
 })
