@@ -22,17 +22,25 @@ a {
   @apply font-bold text-orange;
 }
 
+p {
+  @apply text-lg;
+}
+
 ul {
   list-style-type: none;
   @apply p-0;
 }
 
 button {
-  @apply cursor-pointer;
+  @apply cursor-pointer opacity-75 transition-opacity duration-100;
+}
+
+button:hover {
+  @apply opacity-100 transition-opacity duration-100;
 }
 
 .title {
-  @apply p-12 grid grid-cols-1;
+  @apply pl-12 pr-12 pt-6 pb-6;
 }
 
 .title p {
@@ -43,37 +51,45 @@ button {
   @apply text-orange;
 }
 
-/* @screen md {
-  .title {
-    @apply grid-cols-2 p-12;
-  }
-} */
-
 /* MAP */
 
 .map__wrapper p {
-  @apply pl-12 pr-12 w-1/2;
+  @apply pl-12 pr-12;
+}
+
+@screen md {
+  .map__wrapper p {
+    @apply w-1/2;
+  }
 }
 
 .map {
-  @apply pr-12 pl-8 pt-6 pb-6 uppercase;
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: 17% 82%;
+  @apply pr-12 pl-8 pt-6 pb-6 uppercase grid;
+}
+
+@screen md {
+  .map {
+    @apply grid grid-cols-one-and-five;
+  }
 }
 
 .map__chart {
+  @apply w-full;
   height: 75vh;
-  width: 100%;
 }
 
 .map__legend {
-  width: 100%;
-  color: #fff;
+  @apply hidden;
+}
+
+@screen md {
+  .map__legend {
+    @apply inline-block w-full;
+  }
 }
 
 .main-data {
-  @apply grid grid-cols-1 gap-6;
+  @apply grid grid-cols-1 gap-6 p-12;
 }
 
 .main-data h1 {
@@ -82,7 +98,7 @@ button {
 
 @screen md {
   .main-data {
-    @apply grid grid-cols-similar-fractions pl-12 pr-12;
+    @apply grid grid-cols-three-big-indent pl-12 pr-12;
   }
 }
 
@@ -100,13 +116,24 @@ button {
   @apply pl-12 pt-12 pb-6;
 }
 
+.slider-wrapper svg {
+  @apply hidden;
+}
+
+
+@screen md {
+  .slider-wrapper svg {
+    @apply block;
+  }
+}
+
 .slider {
-  @apply grid bg-orange text-lightGrey pl-12 pr-12;
+  @apply grid bg-orange text-lightGrey p-2;
 }
 
 @screen md {
   .slider {
-    @apply grid-cols-two-thirds;
+    @apply grid-cols-two-thirds pl-12 pr-12;
   }
 }
 
@@ -143,6 +170,10 @@ button {
 
 .slider__nav button{
   @apply bg-orange border-0;
+}
+
+.slider__nav button:hover > img > svg {
+  fill: red;
 }
 
 .slider__nav button:focus {
@@ -201,6 +232,16 @@ button {
   @apply grid grid-rows-two-thirds-inverse gap-20;
 }
 
+.hubei__title {
+  @apply mt-24;
+}
+
+@screen md {
+  .hubei__title {
+    @apply mt-0;
+  }
+}
+
 .covid-data__countries {
   @apply p-12;
 }
@@ -257,12 +298,23 @@ button {
 } */
 
 .covid-data__violence {
-  @apply bg-blue text-white p-6 relative;
+  @apply bg-blue text-white p-12 relative;
 }
 
 @screen md {
   .covid-data__violence {
-    @apply pl-16 pr-16 mt-32 grid grid-cols-similar gap-16;
+    @apply p-16 mt-32 grid grid-cols-similar gap-16;
+  }
+}
+
+.violence__right {
+  @apply pt-16;
+  height: 100vh;
+}
+
+@screen md {
+  .violence__right {
+    @apply pt-0;
   }
 }
 
@@ -277,7 +329,7 @@ button {
 }
 
 .violence__shame {
-  @apply pt-6 pb-10;
+  @apply pt-6 pb-10 pt-10;
 }
 
 .violence__shame h3:first-of-type {
@@ -286,6 +338,16 @@ button {
 
 .violence__shame h3:nth-child(2) {
   @apply text-orange;
+}
+
+.violence__percentage li:last-child {
+  @apply pt-10;
+}
+
+@screen md {
+  .violence__percentage li:last-child {
+    @apply pt-0;
+  }
 }
 
 @screen md {
@@ -314,7 +376,6 @@ footer {
 }
 
 /* svgs */
-
 .custom-shape-divider-top-1593201312 {
     position: absolute;
     left: 0;
@@ -326,7 +387,6 @@ footer {
 
 .custom-shape-divider-top-1593201312 svg {
     position: relative;
-    display: block;
     width: calc(135% + 1.3px);
     height: 204px;
 }
@@ -348,7 +408,6 @@ footer {
 
 .custom-shape-divider-bottom-1593201417 svg {
     position: relative;
-    display: block;
     width: calc(100% + 1.3px);
     height: 140px;
     transform: rotateY(180deg);
@@ -370,7 +429,6 @@ footer {
 
 .custom-shape-divider-bottom-1593201757 svg {
     position: relative;
-    display: block;
     width: calc(100% + 1.3px);
     height: 245px;
     transform: rotateY(180deg);
@@ -394,7 +452,6 @@ footer {
 
 .custom-shape-divider-bottom-1593202295 svg {
     position: relative;
-    display: block;
     width: calc(177% + 1.3px);
     height: 72px;
 }
@@ -416,7 +473,6 @@ footer {
 
 .custom-shape-divider-bottom-1593202630 svg {
     position: relative;
-    display: block;
     width: calc(217% + 1.3px);
     height: 235px;
 }

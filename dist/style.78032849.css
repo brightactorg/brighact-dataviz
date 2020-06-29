@@ -46,19 +46,33 @@ a{
   color:rgba(255, 89, 51, var(--text-opacity))
 }
 
+p{
+  font-size:1.125rem
+}
+
 ul{
   list-style-type:none;
   padding:0
 }
 
 button{
-  cursor:pointer
+  cursor:pointer;
+  opacity:0.75;
+  transition-property:opacity;
+  transition-duration:100ms
+}
+
+button:hover{
+  opacity:1;
+  transition-property:opacity;
+  transition-duration:100ms
 }
 
 .title{
-  padding:3rem;
-  display:grid;
-  grid-template-columns:repeat(1, minmax(0, 1fr))
+  padding-left:3rem;
+  padding-right:3rem;
+  padding-top:1.5rem;
+  padding-bottom:1.5rem
 }
 
 .title p{
@@ -73,8 +87,13 @@ button{
 
 .map__wrapper p{
   padding-left:3rem;
-  padding-right:3rem;
-  width:50%
+  padding-right:3rem
+}
+
+@media (min-width: 768px){
+  .map__wrapper p{
+    width:50%
+  }
 }
 
 .map{
@@ -83,26 +102,38 @@ button{
   padding-top:1.5rem;
   padding-bottom:1.5rem;
   text-transform:uppercase;
-  display:-ms-grid;
-  display:grid;
-  grid-template-columns:17% 82%
+  display:grid
+}
+
+@media (min-width: 768px){
+  .map{
+    display:grid;
+    grid-template-columns:1fr 5fr
+  }
 }
 
 .map__chart{
-  height:75vh;
-  width:100%
+  width:100%;
+  height:75vh
 }
 
 .map__legend{
-  width:100%;
-  color:#fff
+  display:none
+}
+
+@media (min-width: 768px){
+  .map__legend{
+    display:inline-block;
+    width:100%
+  }
 }
 
 .main-data{
   display:grid;
   grid-template-columns:repeat(1, minmax(0, 1fr));
   grid-gap:1.5rem;
-  gap:1.5rem
+  gap:1.5rem;
+  padding:3rem
 }
 
 .main-data h1{
@@ -114,7 +145,7 @@ button{
 @media (min-width: 768px){
   .main-data{
     display:grid;
-    grid-template-columns:2fr 1.2fr 1fr;
+    grid-template-columns:2.5fr 1.5fr 1fr;
     padding-left:3rem;
     padding-right:3rem
   }
@@ -139,6 +170,16 @@ button{
   padding-bottom:1.5rem
 }
 
+.slider-wrapper svg{
+  display:none
+}
+
+@media (min-width: 768px){
+  .slider-wrapper svg{
+    display:block
+  }
+}
+
 .slider{
   display:grid;
   --bg-opacity:1;
@@ -147,13 +188,14 @@ button{
   --text-opacity:1;
   color:#F7F0ED;
   color:rgba(247, 240, 237, var(--text-opacity));
-  padding-left:3rem;
-  padding-right:3rem
+  padding:0.5rem
 }
 
 @media (min-width: 768px){
   .slider{
-    grid-template-columns:2fr 1fr
+    grid-template-columns:2fr 1fr;
+    padding-left:3rem;
+    padding-right:3rem
   }
 }
 
@@ -201,6 +243,10 @@ button{
   background-color:#FF5933;
   background-color:rgba(255, 89, 51, var(--bg-opacity));
   border-width:0
+}
+
+.slider__nav button:hover>img>svg{
+  fill:red
 }
 
 .slider__nav button:focus{
@@ -261,6 +307,16 @@ button{
   grid-template-rows:1fr 2fr;
   grid-gap:5rem;
   gap:5rem
+}
+
+.hubei__title{
+  margin-top:6rem
+}
+
+@media (min-width: 768px){
+  .hubei__title{
+    margin-top:0
+  }
 }
 
 .covid-data__countries{
@@ -324,19 +380,29 @@ button{
   --text-opacity:1;
   color:#fff;
   color:rgba(255, 255, 255, var(--text-opacity));
-  padding:1.5rem;
+  padding:3rem;
   position:relative
 }
 
 @media (min-width: 768px){
   .covid-data__violence{
-    padding-left:4rem;
-    padding-right:4rem;
+    padding:4rem;
     margin-top:8rem;
     display:grid;
     grid-template-columns:1.2fr 1fr;
     grid-gap:4rem;
     gap:4rem
+  }
+}
+
+.violence__right{
+  padding-top:4rem;
+  height:100vh
+}
+
+@media (min-width: 768px){
+  .violence__right{
+    padding-top:0
   }
 }
 
@@ -356,7 +422,8 @@ button{
 
 .violence__shame{
   padding-top:1.5rem;
-  padding-bottom:2.5rem
+  padding-bottom:2.5rem;
+  padding-top:2.5rem
 }
 
 .violence__shame h3:first-of-type{
@@ -369,6 +436,16 @@ button{
   --text-opacity:1;
   color:#FF5933;
   color:rgba(255, 89, 51, var(--text-opacity))
+}
+
+.violence__percentage li:last-child{
+  padding-top:2.5rem
+}
+
+@media (min-width: 768px){
+  .violence__percentage li:last-child{
+    padding-top:0
+  }
 }
 
 @media (min-width: 768px){
@@ -423,7 +500,6 @@ footer{
 
 .custom-shape-divider-top-1593201312 svg{
   position:relative;
-  display:block;
   width:calc(135% + 1.3px);
   height:204px
 }
@@ -445,7 +521,6 @@ footer{
 
 .custom-shape-divider-bottom-1593201417 svg{
   position:relative;
-  display:block;
   width:calc(100% + 1.3px);
   height:140px;
   transform:rotateY(180deg)
@@ -467,7 +542,6 @@ footer{
 
 .custom-shape-divider-bottom-1593201757 svg{
   position:relative;
-  display:block;
   width:calc(100% + 1.3px);
   height:245px;
   transform:rotateY(180deg)
@@ -491,7 +565,6 @@ footer{
 
 .custom-shape-divider-bottom-1593202295 svg{
   position:relative;
-  display:block;
   width:calc(177% + 1.3px);
   height:72px
 }
@@ -513,7 +586,6 @@ footer{
 
 .custom-shape-divider-bottom-1593202630 svg{
   position:relative;
-  display:block;
   width:calc(217% + 1.3px);
   height:235px
 }
