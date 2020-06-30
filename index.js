@@ -26,7 +26,7 @@ am4core.ready(function() {
   map.geodata = am4geodata_worldLow;
   map.projection = new am4maps.projections.Miller();
 
-  map.homeZoomLevel = 3;
+  map.homeZoomLevel = 4;
   map.homeGeoPoint = {
     latitude: 52,
     longitude: 10
@@ -255,7 +255,7 @@ am4core.ready(function() {
     previousLabel.label.fill = am4core.color('#fff');
 
     violenceChart.legend = new am4maps.Legend();
-    // violenceChart.legend.position = "top";
+    violenceChart.legend.itemContainers.template.paddingTop = 30;
     violenceChart.legend.labels.template.fill = am4core.color("#fff");
 
     // Hubei Province Chart

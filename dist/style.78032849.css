@@ -4,6 +4,22 @@
 
 @tailwind utilities;
 
+@font-face{
+  font-family:Roboto;
+
+  font-weight:400;
+
+  src:url(/Roboto-Regular.586fc6e6.ttf) format("truetype")
+}
+
+@font-face{
+  font-family:Libre Baskerville;
+
+  font-weight:400;
+
+  src:url(/LibreBaskerville-Italic.c9dafce7.ttf) format("truetype")
+}
+
 body{
   --bg-opacity:1;
   background-color:#F7F0ED;
@@ -14,6 +30,10 @@ body{
   color:rgba(0, 0, 0, var(--text-opacity));
   margin:0;
   overflow-x:hidden
+}
+
+html.wf-loading *{
+  opacity:0
 }
 
 h1{
@@ -46,19 +66,39 @@ a{
   color:rgba(255, 89, 51, var(--text-opacity))
 }
 
+p{
+  font-size:1.125rem
+}
+
 ul{
   list-style-type:none;
   padding:0
 }
 
 button{
-  cursor:pointer
+  cursor:pointer;
+  opacity:0.75;
+  transition-property:opacity;
+  transition-duration:100ms
+}
+
+button:hover{
+  opacity:1;
+  transition-property:opacity;
+  transition-duration:100ms
 }
 
 .title{
-  padding:3rem;
-  display:grid;
-  grid-template-columns:repeat(1, minmax(0, 1fr))
+  padding:2rem
+}
+
+@media (min-width: 768px){
+  .title{
+    padding-left:3rem;
+    padding-right:3rem;
+    padding-top:1.5rem;
+    padding-bottom:1.5rem
+  }
 }
 
 .title p{
@@ -72,37 +112,57 @@ button{
 }
 
 .map__wrapper p{
-  padding-left:3rem;
-  padding-right:3rem;
-  width:50%
+  padding-left:2rem;
+  padding-right:2rem
+}
+
+@media (min-width: 768px){
+  .map__wrapper p{
+    width:50%;
+    padding-left:3rem;
+    padding-right:3rem
+  }
 }
 
 .map{
-  padding-right:3rem;
-  padding-left:2rem;
-  padding-top:1.5rem;
-  padding-bottom:1.5rem;
+  padding:2rem;
   text-transform:uppercase;
-  display:-ms-grid;
-  display:grid;
-  grid-template-columns:17% 82%
+  display:grid
+}
+
+@media (min-width: 768px){
+  .map{
+    display:grid;
+    grid-template-columns:1fr 5fr;
+    padding-right:3rem;
+    padding-left:2rem;
+    padding-top:1.5rem;
+    padding-bottom:1.5rem
+  }
 }
 
 .map__chart{
-  height:75vh;
-  width:100%
+  width:100%;
+  height:75vh
 }
 
 .map__legend{
-  width:100%;
-  color:#fff
+  display:none
+}
+
+@media (min-width: 768px){
+  .map__legend{
+    display:inline-block;
+    width:100%
+  }
 }
 
 .main-data{
   display:grid;
   grid-template-columns:repeat(1, minmax(0, 1fr));
   grid-gap:1.5rem;
-  gap:1.5rem
+  gap:1.5rem;
+  padding:2rem
 }
 
 .main-data h1{
@@ -114,7 +174,7 @@ button{
 @media (min-width: 768px){
   .main-data{
     display:grid;
-    grid-template-columns:2fr 1.2fr 1fr;
+    grid-template-columns:2.5fr 1.5fr 1fr;
     padding-left:3rem;
     padding-right:3rem
   }
@@ -134,9 +194,21 @@ button{
 }
 
 .slider-wrapper h2{
-  padding-left:3rem;
-  padding-top:3rem;
-  padding-bottom:1.5rem
+  padding:2rem
+}
+
+@media (min-width: 768px){
+  @apply pl-12 pt-12 pb-6
+}
+
+.slider-wrapper svg{
+  display:none
+}
+
+@media (min-width: 768px){
+  .slider-wrapper svg{
+    display:block
+  }
 }
 
 .slider{
@@ -147,13 +219,14 @@ button{
   --text-opacity:1;
   color:#F7F0ED;
   color:rgba(247, 240, 237, var(--text-opacity));
-  padding-left:3rem;
-  padding-right:3rem
+  padding:0.5rem
 }
 
 @media (min-width: 768px){
   .slider{
-    grid-template-columns:2fr 1fr
+    grid-template-columns:2fr 1fr;
+    padding-left:3rem;
+    padding-right:3rem
   }
 }
 
@@ -203,18 +276,28 @@ button{
   border-width:0
 }
 
+.slider__nav button:hover>img>svg{
+  fill:red
+}
+
 .slider__nav button:focus{
   border-width:0;
   outline:0
 }
 
 .covid-data__chart .chart__heading{
-  padding:3rem
+  padding:2rem
+}
+
+@media (min-width: 768px){
+  .covid-data__chart .chart__heading{
+    padding:3rem
+  }
 }
 
 .covid-data__main{
   display:grid;
-  padding:3rem
+  padding:2rem
 }
 
 .covid-data__main h1,.covid-data__main h2,.covid-data__main h3{
@@ -223,11 +306,12 @@ button{
   color:rgba(23, 26, 168, var(--text-opacity))
 }
 
-@media (min-width: 768px){
+@media (min-width: 980px){
   .covid-data__main{
     grid-template-columns:1fr 1.2fr;
     grid-gap:1rem;
-    gap:1rem
+    gap:1rem;
+    padding:3rem
   }
 }
 
@@ -263,33 +347,75 @@ button{
   gap:5rem
 }
 
+.hubei__title{
+  margin-top:6rem
+}
+
+@media (min-width: 980px){
+  .hubei__title{
+    margin-top:0
+  }
+}
+
 .covid-data__countries{
-  padding:3rem
+  padding:2rem
 }
 
 @media (min-width: 768px){
   .covid-data__countries{
     display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    grid-gap:5rem;
+    gap:5rem;
+    padding:3rem
+  }
+}
+
+@media (min-width: 1024px){
+  .covid-data__countries{
     grid-template-columns:0.5fr 2fr 2fr 2fr;
     grid-gap:5rem;
-    gap:5rem
+    gap:5rem;
+    padding:3rem
   }
 }
 
 .country{
   display:grid;
-  grid-template-columns:1fr 2fr;
-  grid-template-rows:repeat(2, minmax(0, 1fr));
+  grid-template-columns:1fr 1.2fr;
+  grid-template-rows:1fr 1.4fr;
   grid-template-areas:"text icon" ". stats"
 }
 
-.country img{
-  max-width:100%
+@media (min-width: 768px){
+  .country{
+    grid-template-columns:1fr 2fr;
+    grid-template-areas:"text icon" "stats stats"
+  }
 }
 
-.country:first-of-type{
-  grid-column-start:2;
-  grid-column-end:2
+@media (min-width: 1280px){
+  .country{
+    grid-template-rows:repeat(2, minmax(0, 1fr));
+    grid-template-areas:"text icon" ". stats"
+  }
+}
+
+.country img{
+  max-width:80%
+}
+
+@media (min-width: 768px){
+  .country img{
+    max-width:100%
+  }
+}
+
+@media (min-width: 1024px){
+  .country:first-of-type{
+    grid-column-start:2;
+    grid-column-end:2
+  }
 }
 
 .country__top--text{
@@ -301,12 +427,13 @@ button{
   position:relative
 }
 
-.country__bottom:before{
-  content:"";
-  position:absolute;
-  border-top:2px solid #000;
-  width:160%;
-  left:-7.5rem
+@media (min-width: 768px){
+  .country__bottom:before{
+    content:"";
+    position:absolute;
+    border-top:2px solid #000;
+    width:100%
+  }
 }
 
 .country__bottom h1,.country__bottom p{
@@ -324,19 +451,30 @@ button{
   --text-opacity:1;
   color:#fff;
   color:rgba(255, 255, 255, var(--text-opacity));
-  padding:1.5rem;
+  padding:2rem;
   position:relative
 }
 
-@media (min-width: 768px){
+@media (min-width: 980px){
   .covid-data__violence{
-    padding-left:4rem;
-    padding-right:4rem;
+    padding:4rem;
     margin-top:8rem;
     display:grid;
     grid-template-columns:1.2fr 1fr;
     grid-gap:4rem;
-    gap:4rem
+    gap:4rem;
+    padding:3rem
+  }
+}
+
+.violence__right{
+  padding-top:4rem;
+  height:100vh
+}
+
+@media (min-width: 980px){
+  .violence__right{
+    padding-top:0
   }
 }
 
@@ -356,7 +494,8 @@ button{
 
 .violence__shame{
   padding-top:1.5rem;
-  padding-bottom:2.5rem
+  padding-bottom:2.5rem;
+  padding-top:2.5rem
 }
 
 .violence__shame h3:first-of-type{
@@ -369,6 +508,16 @@ button{
   --text-opacity:1;
   color:#FF5933;
   color:rgba(255, 89, 51, var(--text-opacity))
+}
+
+.violence__percentage li:last-child{
+  padding-top:2.5rem
+}
+
+@media (min-width: 768px){
+  .violence__percentage li:last-child{
+    padding-top:0
+  }
 }
 
 @media (min-width: 768px){
@@ -406,10 +555,17 @@ footer{
   --text-opacity:1;
   color:#fff;
   color:rgba(255, 255, 255, var(--text-opacity));
-  padding-top:8rem;
-  padding-left:4rem;
-  padding-right:4rem;
+  padding-top:10rem;
+  padding-left:2rem;
+  padding-right:2rem;
   padding-bottom:1.5rem
+}
+
+@media (min-width: 768px){
+  footer{
+    padding-left:3rem;
+    padding-right:3rem
+  }
 }
 
 .custom-shape-divider-top-1593201312{
@@ -423,7 +579,6 @@ footer{
 
 .custom-shape-divider-top-1593201312 svg{
   position:relative;
-  display:block;
   width:calc(135% + 1.3px);
   height:204px
 }
@@ -445,7 +600,6 @@ footer{
 
 .custom-shape-divider-bottom-1593201417 svg{
   position:relative;
-  display:block;
   width:calc(100% + 1.3px);
   height:140px;
   transform:rotateY(180deg)
@@ -467,7 +621,6 @@ footer{
 
 .custom-shape-divider-bottom-1593201757 svg{
   position:relative;
-  display:block;
   width:calc(100% + 1.3px);
   height:245px;
   transform:rotateY(180deg)
@@ -491,7 +644,6 @@ footer{
 
 .custom-shape-divider-bottom-1593202295 svg{
   position:relative;
-  display:block;
   width:calc(177% + 1.3px);
   height:72px
 }
@@ -513,7 +665,6 @@ footer{
 
 .custom-shape-divider-bottom-1593202630 svg{
   position:relative;
-  display:block;
   width:calc(217% + 1.3px);
   height:235px
 }

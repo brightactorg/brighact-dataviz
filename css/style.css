@@ -1,9 +1,26 @@
 @import "tailwindcss/base";
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  src: url(../assets/fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Libre Baskerville;
+  font-weight: 400;
+  src: url(../assets/fonts/LibreBaskerville-Italic.ttf) format('truetype');
+}
+
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 body {
   @apply bg-lightGrey font-sans text-black m-0 overflow-x-hidden;
+}
+
+html.wf-loading * {
+  @apply opacity-0;
 }
 
 h1 {
@@ -22,17 +39,31 @@ a {
   @apply font-bold text-orange;
 }
 
+p {
+  @apply text-lg;
+}
+
 ul {
   list-style-type: none;
   @apply p-0;
 }
 
 button {
-  @apply cursor-pointer;
+  @apply cursor-pointer opacity-75 transition-opacity duration-100;
+}
+
+button:hover {
+  @apply opacity-100 transition-opacity duration-100;
 }
 
 .title {
-  @apply p-12 grid grid-cols-1;
+  @apply p-8;
+}
+
+@screen md {
+  .title {
+    @apply pl-12 pr-12 pt-6 pb-6;
+  }
 }
 
 .title p {
@@ -43,37 +74,45 @@ button {
   @apply text-orange;
 }
 
-/* @screen md {
-  .title {
-    @apply grid-cols-2 p-12;
-  }
-} */
-
 /* MAP */
 
 .map__wrapper p {
-  @apply pl-12 pr-12 w-1/2;
+  @apply pl-8 pr-8;
+}
+
+@screen md {
+  .map__wrapper p {
+    @apply w-1/2 pl-12 pr-12;
+  }
 }
 
 .map {
-  @apply pr-12 pl-8 pt-6 pb-6 uppercase;
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: 17% 82%;
+  @apply p-8 uppercase grid;
+}
+
+@screen md {
+  .map {
+    @apply grid grid-cols-one-and-five pr-12 pl-8 pt-6 pb-6;
+  }
 }
 
 .map__chart {
+  @apply w-full;
   height: 75vh;
-  width: 100%;
 }
 
 .map__legend {
-  width: 100%;
-  color: #fff;
+  @apply hidden;
+}
+
+@screen md {
+  .map__legend {
+    @apply inline-block w-full;
+  }
 }
 
 .main-data {
-  @apply grid grid-cols-1 gap-6;
+  @apply grid grid-cols-1 gap-6 p-8;
 }
 
 .main-data h1 {
@@ -82,7 +121,7 @@ button {
 
 @screen md {
   .main-data {
-    @apply grid grid-cols-similar-fractions pl-12 pr-12;
+    @apply grid grid-cols-three-big-indent pl-12 pr-12;
   }
 }
 
@@ -97,16 +136,31 @@ button {
 }
 
 .slider-wrapper h2 {
+  @apply p-8;
+}
+
+@screen md {
   @apply pl-12 pt-12 pb-6;
 }
 
+.slider-wrapper svg {
+  @apply hidden;
+}
+
+
+@screen md {
+  .slider-wrapper svg {
+    @apply block;
+  }
+}
+
 .slider {
-  @apply grid bg-orange text-lightGrey pl-12 pr-12;
+  @apply grid bg-orange text-lightGrey p-2;
 }
 
 @screen md {
   .slider {
-    @apply grid-cols-two-thirds;
+    @apply grid-cols-two-thirds pl-12 pr-12;
   }
 }
 
@@ -145,6 +199,10 @@ button {
   @apply bg-orange border-0;
 }
 
+.slider__nav button:hover > img > svg {
+  fill: red;
+}
+
 .slider__nav button:focus {
   @apply border-0 outline-none;
 }
@@ -154,11 +212,17 @@ button {
 }
 
 .covid-data__chart .chart__heading {
-  @apply p-12;
+  @apply p-8;
+}
+
+@screen md {
+  .covid-data__chart .chart__heading {
+    @apply p-12;
+  }
 }
 
 .covid-data__main {
-  @apply grid p-12;
+  @apply grid p-8;
 }
 
 .covid-data__main h1,
@@ -167,9 +231,9 @@ button {
   @apply text-blue;
 }
 
-@screen md {
+@screen bg {
   .covid-data__main {
-    @apply grid-cols-similar-reverse gap-4;
+    @apply grid-cols-similar-inverse gap-4 p-12;
   }
 }
 
@@ -180,7 +244,6 @@ button {
 .main__who .main__info {
   border-left: 2px solid black;
   @apply p-4 ml-4;
-
 }
 
 .main__who h2 {
@@ -201,29 +264,70 @@ button {
   @apply grid grid-rows-two-thirds-inverse gap-20;
 }
 
+.hubei__title {
+  @apply mt-24;
+}
+
+@screen bg {
+  .hubei__title {
+    @apply mt-0;
+  }
+}
+
 .covid-data__countries {
-  @apply p-12;
+  @apply p-8;
 }
   
 @screen md {
   .covid-data__countries {
-    @apply grid grid-cols-three-indent-half gap-20;
+    @apply grid grid-cols-3 gap-20 p-12;
+  }
+}
+
+@screen lg {
+  .covid-data__countries {
+    @apply grid-cols-three-indent-half gap-20 p-12;
   }
 }
 
 .country {
-  @apply grid grid-cols-tho-thirds-inverse grid-rows-2;
+  @apply grid grid-cols-similar-inverse grid-rows-similar;
   grid-template-areas: "text icon"
-  ". stats";
+    ". stats";
+}
+
+@screen md {
+  .country {
+    @apply grid-cols-two-thirds-inverse;
+    grid-template-areas: "text icon"
+    "stats stats";
+  }
+}
+
+@screen xl {
+  .country {
+    @apply grid-rows-2;
+    grid-template-areas: "text icon"
+    ". stats";
+  }
 }
 
 .country img {
-  max-width: 100%;
+  max-width: 80%;
 }
 
-.country:first-of-type {
-  @apply col-start-2 col-end-2;
+@screen md {
+  .country img {
+    max-width: 100%;
+  }
 }
+
+@screen lg {
+  .country:first-of-type {
+    @apply col-start-2 col-end-2;
+  }
+}
+
 
 .country__top--text {
   grid-area: text;
@@ -234,12 +338,14 @@ button {
   @apply relative;
 }
 
-.country__bottom:before {
+@screen md {
+  .country__bottom:before {
   content: "";
   position: absolute;
   border-top: 2px solid black;
-  width: 160%;
-  left: -7.5rem;
+  width: 100%;
+  /* left: -7.5rem; */
+  }
 }
 
 .country__bottom h1,
@@ -257,12 +363,23 @@ button {
 } */
 
 .covid-data__violence {
-  @apply bg-blue text-white p-6 relative;
+  @apply bg-blue text-white p-8 relative;
 }
 
-@screen md {
+@screen bg {
   .covid-data__violence {
-    @apply pl-16 pr-16 mt-32 grid grid-cols-similar gap-16;
+    @apply p-16 mt-32 grid grid-cols-similar gap-16 p-12;
+  }
+}
+
+.violence__right {
+  @apply pt-16;
+  height: 100vh;
+}
+
+@screen bg {
+  .violence__right {
+    @apply pt-0;
   }
 }
 
@@ -277,7 +394,7 @@ button {
 }
 
 .violence__shame {
-  @apply pt-6 pb-10;
+  @apply pt-6 pb-10 pt-10;
 }
 
 .violence__shame h3:first-of-type {
@@ -286,6 +403,16 @@ button {
 
 .violence__shame h3:nth-child(2) {
   @apply text-orange;
+}
+
+.violence__percentage li:last-child {
+  @apply pt-10;
+}
+
+@screen md {
+  .violence__percentage li:last-child {
+    @apply pt-0;
+  }
 }
 
 @screen md {
@@ -310,11 +437,16 @@ button {
 }
 
 footer {
-  @apply bg-blue text-white pt-32 pl-16 pr-16 pb-6;
+  @apply bg-blue text-white pt-40 pl-8 pr-8 pb-6;
+}
+
+@screen md {
+  footer {
+    @apply pl-12 pr-12;
+  }
 }
 
 /* svgs */
-
 .custom-shape-divider-top-1593201312 {
     position: absolute;
     left: 0;
@@ -326,7 +458,6 @@ footer {
 
 .custom-shape-divider-top-1593201312 svg {
     position: relative;
-    display: block;
     width: calc(135% + 1.3px);
     height: 204px;
 }
@@ -348,7 +479,6 @@ footer {
 
 .custom-shape-divider-bottom-1593201417 svg {
     position: relative;
-    display: block;
     width: calc(100% + 1.3px);
     height: 140px;
     transform: rotateY(180deg);
@@ -370,7 +500,6 @@ footer {
 
 .custom-shape-divider-bottom-1593201757 svg {
     position: relative;
-    display: block;
     width: calc(100% + 1.3px);
     height: 245px;
     transform: rotateY(180deg);
@@ -394,7 +523,6 @@ footer {
 
 .custom-shape-divider-bottom-1593202295 svg {
     position: relative;
-    display: block;
     width: calc(177% + 1.3px);
     height: 72px;
 }
@@ -416,7 +544,6 @@ footer {
 
 .custom-shape-divider-bottom-1593202630 svg {
     position: relative;
-    display: block;
     width: calc(217% + 1.3px);
     height: 235px;
 }
