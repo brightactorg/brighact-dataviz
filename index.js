@@ -60,7 +60,7 @@ am4core.ready(function() {
   imageTemplate.tooltipHTML = "{country}: <strong>{value}%</strong>";
   
   imageSeries.tooltip.getFillFromObject = false;
-  imageSeries.tooltip.background.fill = am4core.color("#000");
+  imageSeries.tooltip.background.fill = am4core.color("#171AA8");
   imageSeries.tooltip.label.fill = am4core.color("#F7F0ED");
 
   var circle = imageTemplate.createChild(am4core.Circle);
@@ -97,8 +97,8 @@ am4core.ready(function() {
   map.chartContainer.wheelable = false;
   
   // Hover on country
-  var hoverState = polygonTemplate.states.create('hover');
-  hoverState.properties.fill = am4core.color("#D9D1CE");
+  // var hoverState = polygonTemplate.states.create('hover');
+  // hoverState.properties.fill = am4core.color("#FF9C66");
 
   // Legend
   var legendContainer = am4core.create("map-legend", am4core.Container);
