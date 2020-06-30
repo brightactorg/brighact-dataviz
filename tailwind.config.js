@@ -15,20 +15,24 @@ module.exports = {
       gridTemplateColumns: {
         'three-big-indent': '2.5fr 1.5fr 1fr',
         'two-thirds': '2fr 1fr',
-        'tho-thirds-inverse': '1fr 2fr',
+        'two-thirds-inverse': '1fr 2fr',
         'three-to-one': '3fr 1fr',
         'similar': '1.2fr 1fr',
-        'similar-reverse': '1fr 1.2fr',
+        'similar-inverse': '1fr 1.2fr',
         'three-indent-half': '0.5fr 2fr 2fr 2fr',
         'one-and-five': "1fr 5fr"
       },
       gridTemplateRows: {
         'two-thirds-inverse': '1fr 2fr',
+        'similar': '1fr 1.4fr',
       },
       fontSize: {
         big: '2rem',
         large: '3rem',
         xxl: '5rem'
+      },
+      screens: {
+        bg: { "min": "980px" },
       }
     }
   }

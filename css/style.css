@@ -40,7 +40,13 @@ button:hover {
 }
 
 .title {
-  @apply pl-12 pr-12 pt-6 pb-6;
+  @apply p-8;
+}
+
+@screen md {
+  .title {
+    @apply pl-12 pr-12 pt-6 pb-6;
+  }
 }
 
 .title p {
@@ -54,22 +60,22 @@ button:hover {
 /* MAP */
 
 .map__wrapper p {
-  @apply pl-12 pr-12;
+  @apply pl-8 pr-8;
 }
 
 @screen md {
   .map__wrapper p {
-    @apply w-1/2;
+    @apply w-1/2 pl-12 pr-12;
   }
 }
 
 .map {
-  @apply pr-12 pl-8 pt-6 pb-6 uppercase grid;
+  @apply p-8 uppercase grid;
 }
 
 @screen md {
   .map {
-    @apply grid grid-cols-one-and-five;
+    @apply grid grid-cols-one-and-five pr-12 pl-8 pt-6 pb-6;
   }
 }
 
@@ -89,7 +95,7 @@ button:hover {
 }
 
 .main-data {
-  @apply grid grid-cols-1 gap-6 p-12;
+  @apply grid grid-cols-1 gap-6 p-8;
 }
 
 .main-data h1 {
@@ -113,6 +119,10 @@ button:hover {
 }
 
 .slider-wrapper h2 {
+  @apply p-8;
+}
+
+@screen md {
   @apply pl-12 pt-12 pb-6;
 }
 
@@ -185,11 +195,17 @@ button:hover {
 }
 
 .covid-data__chart .chart__heading {
-  @apply p-12;
+  @apply p-8;
+}
+
+@screen md {
+  .covid-data__chart .chart__heading {
+    @apply p-12;
+  }
 }
 
 .covid-data__main {
-  @apply grid p-12;
+  @apply grid p-8;
 }
 
 .covid-data__main h1,
@@ -198,9 +214,9 @@ button:hover {
   @apply text-blue;
 }
 
-@screen md {
+@screen bg {
   .covid-data__main {
-    @apply grid-cols-similar-reverse gap-4;
+    @apply grid-cols-similar-inverse gap-4 p-12;
   }
 }
 
@@ -211,7 +227,6 @@ button:hover {
 .main__who .main__info {
   border-left: 2px solid black;
   @apply p-4 ml-4;
-
 }
 
 .main__who h2 {
@@ -236,35 +251,66 @@ button:hover {
   @apply mt-24;
 }
 
-@screen md {
+@screen bg {
   .hubei__title {
     @apply mt-0;
   }
 }
 
 .covid-data__countries {
-  @apply p-12;
+  @apply p-8;
 }
   
 @screen md {
   .covid-data__countries {
-    @apply grid grid-cols-three-indent-half gap-20;
+    @apply grid grid-cols-3 gap-20 p-12;
+  }
+}
+
+@screen lg {
+  .covid-data__countries {
+    @apply grid-cols-three-indent-half gap-20 p-12;
   }
 }
 
 .country {
-  @apply grid grid-cols-tho-thirds-inverse grid-rows-2;
+  @apply grid grid-cols-similar-inverse grid-rows-similar;
   grid-template-areas: "text icon"
-  ". stats";
+    ". stats";
+}
+
+@screen md {
+  .country {
+    @apply grid-cols-two-thirds-inverse;
+    grid-template-areas: "text icon"
+    "stats stats";
+  }
+}
+
+@screen xl {
+  .country {
+    @apply grid-rows-2;
+    grid-template-areas: "text icon"
+    ". stats";
+  }
 }
 
 .country img {
-  max-width: 100%;
+  max-width: 80%;
 }
 
-.country:first-of-type {
-  @apply col-start-2 col-end-2;
+@screen md {
+  .country img {
+    max-width: 100%;
+  }
 }
+
+@screen lg {
+  .country:first-of-type {
+    @apply col-start-2 col-end-2;
+  }
+}
+
 
 .country__top--text {
   grid-area: text;
@@ -275,12 +321,14 @@ button:hover {
   @apply relative;
 }
 
-.country__bottom:before {
+@screen md {
+  .country__bottom:before {
   content: "";
   position: absolute;
   border-top: 2px solid black;
-  width: 160%;
-  left: -7.5rem;
+  width: 100%;
+  /* left: -7.5rem; */
+  }
 }
 
 .country__bottom h1,
@@ -298,12 +346,12 @@ button:hover {
 } */
 
 .covid-data__violence {
-  @apply bg-blue text-white p-12 relative;
+  @apply bg-blue text-white p-8 relative;
 }
 
-@screen md {
+@screen bg {
   .covid-data__violence {
-    @apply p-16 mt-32 grid grid-cols-similar gap-16;
+    @apply p-16 mt-32 grid grid-cols-similar gap-16 p-12;
   }
 }
 
@@ -312,7 +360,7 @@ button:hover {
   height: 100vh;
 }
 
-@screen md {
+@screen bg {
   .violence__right {
     @apply pt-0;
   }
@@ -372,7 +420,13 @@ button:hover {
 }
 
 footer {
-  @apply bg-blue text-white pt-32 pl-16 pr-16 pb-6;
+  @apply bg-blue text-white pt-40 pl-8 pr-8 pb-6;
+}
+
+@screen md {
+  footer {
+    @apply pl-12 pr-12;
+  }
 }
 
 /* svgs */

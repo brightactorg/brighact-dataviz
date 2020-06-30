@@ -69,10 +69,16 @@ button:hover{
 }
 
 .title{
-  padding-left:3rem;
-  padding-right:3rem;
-  padding-top:1.5rem;
-  padding-bottom:1.5rem
+  padding:2rem
+}
+
+@media (min-width: 768px){
+  .title{
+    padding-left:3rem;
+    padding-right:3rem;
+    padding-top:1.5rem;
+    padding-bottom:1.5rem
+  }
 }
 
 .title p{
@@ -86,21 +92,20 @@ button:hover{
 }
 
 .map__wrapper p{
-  padding-left:3rem;
-  padding-right:3rem
+  padding-left:2rem;
+  padding-right:2rem
 }
 
 @media (min-width: 768px){
   .map__wrapper p{
-    width:50%
+    width:50%;
+    padding-left:3rem;
+    padding-right:3rem
   }
 }
 
 .map{
-  padding-right:3rem;
-  padding-left:2rem;
-  padding-top:1.5rem;
-  padding-bottom:1.5rem;
+  padding:2rem;
   text-transform:uppercase;
   display:grid
 }
@@ -108,7 +113,11 @@ button:hover{
 @media (min-width: 768px){
   .map{
     display:grid;
-    grid-template-columns:1fr 5fr
+    grid-template-columns:1fr 5fr;
+    padding-right:3rem;
+    padding-left:2rem;
+    padding-top:1.5rem;
+    padding-bottom:1.5rem
   }
 }
 
@@ -133,7 +142,7 @@ button:hover{
   grid-template-columns:repeat(1, minmax(0, 1fr));
   grid-gap:1.5rem;
   gap:1.5rem;
-  padding:3rem
+  padding:2rem
 }
 
 .main-data h1{
@@ -165,9 +174,11 @@ button:hover{
 }
 
 .slider-wrapper h2{
-  padding-left:3rem;
-  padding-top:3rem;
-  padding-bottom:1.5rem
+  padding:2rem
+}
+
+@media (min-width: 768px){
+  @apply pl-12 pt-12 pb-6
 }
 
 .slider-wrapper svg{
@@ -255,12 +266,18 @@ button:hover{
 }
 
 .covid-data__chart .chart__heading{
-  padding:3rem
+  padding:2rem
+}
+
+@media (min-width: 768px){
+  .covid-data__chart .chart__heading{
+    padding:3rem
+  }
 }
 
 .covid-data__main{
   display:grid;
-  padding:3rem
+  padding:2rem
 }
 
 .covid-data__main h1,.covid-data__main h2,.covid-data__main h3{
@@ -269,11 +286,12 @@ button:hover{
   color:rgba(23, 26, 168, var(--text-opacity))
 }
 
-@media (min-width: 768px){
+@media (min-width: 980px){
   .covid-data__main{
     grid-template-columns:1fr 1.2fr;
     grid-gap:1rem;
-    gap:1rem
+    gap:1rem;
+    padding:3rem
   }
 }
 
@@ -313,39 +331,71 @@ button:hover{
   margin-top:6rem
 }
 
-@media (min-width: 768px){
+@media (min-width: 980px){
   .hubei__title{
     margin-top:0
   }
 }
 
 .covid-data__countries{
-  padding:3rem
+  padding:2rem
 }
 
 @media (min-width: 768px){
   .covid-data__countries{
     display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    grid-gap:5rem;
+    gap:5rem;
+    padding:3rem
+  }
+}
+
+@media (min-width: 1024px){
+  .covid-data__countries{
     grid-template-columns:0.5fr 2fr 2fr 2fr;
     grid-gap:5rem;
-    gap:5rem
+    gap:5rem;
+    padding:3rem
   }
 }
 
 .country{
   display:grid;
-  grid-template-columns:1fr 2fr;
-  grid-template-rows:repeat(2, minmax(0, 1fr));
+  grid-template-columns:1fr 1.2fr;
+  grid-template-rows:1fr 1.4fr;
   grid-template-areas:"text icon" ". stats"
 }
 
-.country img{
-  max-width:100%
+@media (min-width: 768px){
+  .country{
+    grid-template-columns:1fr 2fr;
+    grid-template-areas:"text icon" "stats stats"
+  }
 }
 
-.country:first-of-type{
-  grid-column-start:2;
-  grid-column-end:2
+@media (min-width: 1280px){
+  .country{
+    grid-template-rows:repeat(2, minmax(0, 1fr));
+    grid-template-areas:"text icon" ". stats"
+  }
+}
+
+.country img{
+  max-width:80%
+}
+
+@media (min-width: 768px){
+  .country img{
+    max-width:100%
+  }
+}
+
+@media (min-width: 1024px){
+  .country:first-of-type{
+    grid-column-start:2;
+    grid-column-end:2
+  }
 }
 
 .country__top--text{
@@ -357,12 +407,13 @@ button:hover{
   position:relative
 }
 
-.country__bottom:before{
-  content:"";
-  position:absolute;
-  border-top:2px solid #000;
-  width:160%;
-  left:-7.5rem
+@media (min-width: 768px){
+  .country__bottom:before{
+    content:"";
+    position:absolute;
+    border-top:2px solid #000;
+    width:100%
+  }
 }
 
 .country__bottom h1,.country__bottom p{
@@ -380,18 +431,19 @@ button:hover{
   --text-opacity:1;
   color:#fff;
   color:rgba(255, 255, 255, var(--text-opacity));
-  padding:3rem;
+  padding:2rem;
   position:relative
 }
 
-@media (min-width: 768px){
+@media (min-width: 980px){
   .covid-data__violence{
     padding:4rem;
     margin-top:8rem;
     display:grid;
     grid-template-columns:1.2fr 1fr;
     grid-gap:4rem;
-    gap:4rem
+    gap:4rem;
+    padding:3rem
   }
 }
 
@@ -400,7 +452,7 @@ button:hover{
   height:100vh
 }
 
-@media (min-width: 768px){
+@media (min-width: 980px){
   .violence__right{
     padding-top:0
   }
@@ -483,10 +535,17 @@ footer{
   --text-opacity:1;
   color:#fff;
   color:rgba(255, 255, 255, var(--text-opacity));
-  padding-top:8rem;
-  padding-left:4rem;
-  padding-right:4rem;
+  padding-top:10rem;
+  padding-left:2rem;
+  padding-right:2rem;
   padding-bottom:1.5rem
+}
+
+@media (min-width: 768px){
+  footer{
+    padding-left:3rem;
+    padding-right:3rem
+  }
 }
 
 .custom-shape-divider-top-1593201312{
