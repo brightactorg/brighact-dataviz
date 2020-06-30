@@ -1,9 +1,26 @@
 @import "tailwindcss/base";
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  src: url(../assets/fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Libre Baskerville;
+  font-weight: 400;
+  src: url(../assets/fonts/LibreBaskerville-Italic.ttf) format('truetype');
+}
+
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 body {
   @apply bg-lightGrey font-sans text-black m-0 overflow-x-hidden;
+}
+
+html.wf-loading * {
+  @apply opacity-0;
 }
 
 h1 {
