@@ -57,7 +57,7 @@ button:hover {
 }
 
 .title {
-  @apply p-8;
+  @apply p-8 opacity-0;
 }
 
 @screen md {
@@ -75,7 +75,6 @@ button:hover {
 }
 
 /* MAP */
-
 .map__wrapper p {
   @apply pl-8 pr-8;
 }
@@ -127,8 +126,12 @@ button:hover {
 
 @screen md {
   .main-data__1 {
-    @apply col-start-2 col-end-2;
+    @apply col-start-2 col-end-2 opacity-0;
   }
+}
+
+.main-data__2 {
+  @apply opacity-0;
 }
 
 .slider-wrapper {
@@ -147,7 +150,6 @@ button:hover {
   @apply hidden;
 }
 
-
 @screen md {
   .slider-wrapper svg {
     @apply block;
@@ -165,7 +167,7 @@ button:hover {
 }
 
 .slider__text {
-  @apply pt-6 pb-6 pl-16 pr-16 grid;
+  @apply pt-6 pb-6 pl-16 pr-16 grid opacity-0;
 }
 
 .slider__text > li > hgroup {
@@ -221,6 +223,10 @@ button:hover {
   }
 }
 
+.covid-data__chart  .chart__covid {
+  @apply pt-10 pb-10;
+}
+
 .covid-data__main {
   @apply grid p-8;
 }
@@ -238,7 +244,7 @@ button:hover {
 }
 
 .main__who {
-  @apply flex flex-row;
+  @apply flex flex-row opacity-0;
 }
 
 .main__who .main__info {
@@ -248,6 +254,10 @@ button:hover {
 
 .main__who h2 {
   @apply uppercase;
+}
+
+.main__hubei {
+  @apply opacity-0;
 }
 
 .main__who p:last-of-type,
@@ -275,7 +285,7 @@ button:hover {
 }
 
 .covid-data__countries {
-  @apply p-8;
+  @apply p-8 opacity-0;
 }
   
 @screen md {
@@ -373,8 +383,12 @@ button:hover {
 }
 
 .violence__right {
-  @apply pt-16;
+  @apply pt-16 opacity-0;
   height: 100vh;
+}
+
+.violence__left {
+  @apply opacity-0;
 }
 
 @screen bg {
@@ -444,6 +458,10 @@ footer {
   footer {
     @apply pl-12 pr-12;
   }
+}
+
+.visible {
+  @apply opacity-100 transition-opacity duration-500;
 }
 
 /* svgs */

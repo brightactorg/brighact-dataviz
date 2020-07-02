@@ -89,7 +89,8 @@ button:hover{
 }
 
 .title{
-  padding:2rem
+  padding:2rem;
+  opacity:0
 }
 
 @media (min-width: 768px){
@@ -183,8 +184,13 @@ button:hover{
 @media (min-width: 768px){
   .main-data__1{
     grid-column-start:2;
-    grid-column-end:2
+    grid-column-end:2;
+    opacity:0
   }
+}
+
+.main-data__2{
+  opacity:0
 }
 
 .slider-wrapper{
@@ -235,7 +241,8 @@ button:hover{
   padding-bottom:1.5rem;
   padding-left:4rem;
   padding-right:4rem;
-  display:grid
+  display:grid;
+  opacity:0
 }
 
 .slider__text>li>hgroup{
@@ -295,6 +302,11 @@ button:hover{
   }
 }
 
+.covid-data__chart .chart__covid{
+  padding-top:2.5rem;
+  padding-bottom:2.5rem
+}
+
 .covid-data__main{
   display:grid;
   padding:2rem
@@ -317,7 +329,8 @@ button:hover{
 
 .main__who{
   display:flex;
-  flex-direction:row
+  flex-direction:row;
+  opacity:0
 }
 
 .main__who .main__info{
@@ -328,6 +341,10 @@ button:hover{
 
 .main__who h2{
   text-transform:uppercase
+}
+
+.main__hubei{
+  opacity:0
 }
 
 .main__hubei p,.main__who p:last-of-type{
@@ -358,7 +375,8 @@ button:hover{
 }
 
 .covid-data__countries{
-  padding:2rem
+  padding:2rem;
+  opacity:0
 }
 
 @media (min-width: 768px){
@@ -469,7 +487,12 @@ button:hover{
 
 .violence__right{
   padding-top:4rem;
+  opacity:0;
   height:100vh
+}
+
+.violence__left{
+  opacity:0
 }
 
 @media (min-width: 980px){
@@ -566,6 +589,12 @@ footer{
     padding-left:3rem;
     padding-right:3rem
   }
+}
+
+.visible{
+  opacity:1;
+  transition-property:opacity;
+  transition-duration:500ms
 }
 
 .custom-shape-divider-top-1593201312{
