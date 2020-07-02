@@ -6,6 +6,31 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 import data from './data/violence_by_country.json';
 
+// Create an intersection Observer
+let observerOptions = {
+  // root: document.querySelector('.data-viz'),
+  rootMargin: "0px",
+  threshold: 0.75,
+};
+
+
+let observer = new IntersectionObserver(intersectCallback, observerOptions);
+
+function intersectCallback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      console.log(entry);
+      entry.target.classList.add('visible');
+
+      observer.unobserve(entry.target);
+    }
+  });
+}
+
+document.querySelectorAll('.observe').forEach((target) => observer.observe(target));
+
+
+// Slider
 let slides = [...document.getElementsByClassName('slides')];
 const arrow = document.getElementById('next');
 
@@ -138,6 +163,7 @@ am4core.ready(function() {
     }
   })
 
+  // Type of Violence Chart
   let violenceChart = am4core.create("type-violence__chart", am4charts.XYChart);
   violenceChart.data = [
     {
@@ -195,99 +221,168 @@ am4core.ready(function() {
       current: 5,
       previous: 19,
     },
-];
+  ];
 
-    let typeViolenceAxis = violenceChart.yAxes.push(new am4charts.CategoryAxis());
-    typeViolenceAxis.dataFields.category = "type";
-    typeViolenceAxis.renderer.cellStartLocation = 0.2;
-    typeViolenceAxis.renderer.cellEndLocation = 0.8;
+  let typeViolenceAxis = violenceChart.yAxes.push(new am4charts.CategoryAxis());
+  typeViolenceAxis.dataFields.category = "type";
+  typeViolenceAxis.renderer.cellStartLocation = 0.2;
+  typeViolenceAxis.renderer.cellEndLocation = 0.8;
 
-    let label = typeViolenceAxis.renderer.labels.template;
-    label.wrap = true;
-    label.maxWidth = 220;
-    label.fill = am4core.color("#FFFFFF");
-    label.padding(10, 20, 5, 0);
+  let label = typeViolenceAxis.renderer.labels.template;
+  label.wrap = true;
+  label.maxWidth = 220;
+  label.fill = am4core.color("#FFFFFF");
+  label.padding(10, 20, 5, 0);
 
-    let valueViolenceAxis = violenceChart.xAxes.push(new am4charts.ValueAxis());
-    valueViolenceAxis.renderer.minGridDistance = 80;
-    typeViolenceAxis.renderer.grid.template.disabled = true;
-    valueViolenceAxis.renderer.grid.template.disabled = true;
-    valueViolenceAxis.renderer.labels.template.disabled = true;
+  let valueViolenceAxis = violenceChart.xAxes.push(new am4charts.ValueAxis());
+  valueViolenceAxis.renderer.minGridDistance = 80;
+  typeViolenceAxis.renderer.grid.template.disabled = true;
+  valueViolenceAxis.renderer.grid.template.disabled = true;
+  valueViolenceAxis.renderer.labels.template.disabled = true;
 
-    let series1 = violenceChart.series.push(new am4charts.ColumnSeries());
-    series1.dataFields.valueX = "current";
-    series1.dataFields.categoryY = "type";
-    series1.columns.template.fill = am4core.color("#FF5933");
-    series1.columns.template.stroke = am4core.color("#FF5933");
-    series1.columns.template.tooltipText = "Current partner: [bold]{valueX}[/]%";
-    series1.tooltip.autoTextColor = false;
-    series1.tooltip.label.fill = am4core.color("#FFFFFF");
-    series1.name = "Current";
-    // series1.stacked = true;
+  let series1 = violenceChart.series.push(new am4charts.ColumnSeries());
+  series1.dataFields.valueX = "current";
+  series1.dataFields.categoryY = "type";
+  series1.columns.template.fill = am4core.color("#FF5933");
+  series1.columns.template.stroke = am4core.color("#FF5933");
+  series1.columns.template.tooltipText = "Current partner: [bold]{valueX}[/]%";
+  series1.tooltip.autoTextColor = false;
+  series1.tooltip.label.fill = am4core.color("#FFFFFF");
+  series1.name = "Current";
 
-    let currentLabel = series1.bullets.push(new am4charts.LabelBullet());
-    currentLabel.label.text = "{valueX}%";
-    currentLabel.label.truncate = false;
-    currentLabel.label.hideOversized = false;
-    currentLabel.label.horizontalCenter = "left";
-    currentLabel.label.dx = 10;
-    currentLabel.label.fill = am4core.color('#fff');
+  let currentLabel = series1.bullets.push(new am4charts.LabelBullet());
+  currentLabel.label.text = "{valueX}%";
+  currentLabel.label.truncate = false;
+  currentLabel.label.hideOversized = false;
+  currentLabel.label.horizontalCenter = "left";
+  currentLabel.label.dx = 10;
+  currentLabel.label.fill = am4core.color('#fff');
 
-    let series2 = violenceChart.series.push(new am4charts.ColumnSeries());
-    series2.dataFields.valueX = "previous";
-    series2.dataFields.categoryY = "type";
-    series2.columns.template.fill = am4core.color("#fff");
-    series2.columns.template.stroke = am4core.color("#fff");
-    series2.columns.template.tooltipText = "Previous partner: [bold]{valueX}[/]%";
-    series2.tooltip.autoTextColor = false;
-    series2.tooltip.label.fill = am4core.color("#171AA8");
-    series2.name = "Previous";
-    // series2.stacked = true;
-   // series2.columns.template.width = am4core.percent(60);
+  let series2 = violenceChart.series.push(new am4charts.ColumnSeries());
+  series2.dataFields.valueX = "previous";
+  series2.dataFields.categoryY = "type";
+  series2.columns.template.fill = am4core.color("#fff");
+  series2.columns.template.stroke = am4core.color("#fff");
+  series2.columns.template.tooltipText = "Previous partner: [bold]{valueX}[/]%";
+  series2.tooltip.autoTextColor = false;
+  series2.tooltip.label.fill = am4core.color("#171AA8");
+  series2.name = "Previous";
 
-    let previousLabel = series2.bullets.push(new am4charts.LabelBullet());
-    previousLabel.label.text = "{valueX}%";
-    previousLabel.label.truncate = false;
-    previousLabel.label.hideOversized = false;
-    previousLabel.label.hideOversized = false;
-    previousLabel.label.horizontalCenter = "left";
-    previousLabel.label.dx = 10;
-    previousLabel.label.fill = am4core.color('#fff');
+  let previousLabel = series2.bullets.push(new am4charts.LabelBullet());
+  previousLabel.label.text = "{valueX}%";
+  previousLabel.label.truncate = false;
+  previousLabel.label.hideOversized = false;
+  previousLabel.label.hideOversized = false;
+  previousLabel.label.horizontalCenter = "left";
+  previousLabel.label.dx = 10;
+  previousLabel.label.fill = am4core.color('#fff');
 
-    violenceChart.legend = new am4maps.Legend();
-    violenceChart.legend.itemContainers.template.paddingTop = 30;
-    violenceChart.legend.labels.template.fill = am4core.color("#fff");
+  violenceChart.legend = new am4maps.Legend();
+  violenceChart.legend.itemContainers.template.paddingTop = 30;
+  violenceChart.legend.labels.template.fill = am4core.color("#fff");
 
-    // Hubei Province Chart
-    let hubeiChart = am4core.create("hubei__chart", am4charts.XYChart);
-    hubeiChart.data = [{
-        date: "February 2019",
-        cases: 47
-      },
-      {
-        date: "February 2020",
-        cases: 162
-      }
-    ];
+  // Hubei Province Chart
+  let hubeiChart = am4core.create("hubei__chart", am4charts.XYChart);
+  hubeiChart.data = [
+    {
+      date: "February 2019",
+      cases: 47,
+      color: "#171AA8",
+    },
+    {
+      date: "February 2020",
+      cases: 162,
+      color: "#FF5933",
+    },
+  ];
 
-    let categoryAxis = hubeiChart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.dataFields.category = "date";
-    let valueAxis = hubeiChart.yAxes.push(new am4charts.ValueAxis());
-    valueAxis.renderer.minGridDistance = 100;
-    categoryAxis.renderer.grid.template.disabled = true;
-    valueAxis.renderer.grid.template.disabled = true;
+  let categoryAxis = hubeiChart.xAxes.push(new am4charts.CategoryAxis());
+  categoryAxis.dataFields.category = "date";
+  let valueAxis = hubeiChart.yAxes.push(new am4charts.ValueAxis());
+  valueAxis.renderer.minGridDistance = 100;
+  categoryAxis.renderer.grid.template.disabled = true;
+  valueAxis.renderer.grid.template.disabled = true;
 
-    let series = hubeiChart.series.push(new am4charts.ColumnSeries());
-    series.dataFields.valueY = "cases";
-    series.dataFields.categoryX = "date";
-    series.columns.template.fill = am4core.color("#FF5933");
-    series.columns.template.stroke = am4core.color("#FF5933");
-    series.columns.template.tooltipText = "{valueY} cases";
-    series.tooltip.autoTextColor = false;
-    series.tooltip.label.fill = am4core.color("#FFFFFF");
+  let series = hubeiChart.series.push(new am4charts.ColumnSeries());
+  series.dataFields.valueY = "cases";
+  series.dataFields.categoryX = "date";
+  series.columns.template.propertyFields.fill = "color";
+  series.columns.template.propertyFields.stroke = "color";
+  series.columns.template.tooltipText = "{valueY} cases";
+  series.tooltip.autoTextColor = false;
+  series.tooltip.label.fill = am4core.color("#FFFFFF");
 
-    let valueLabel = series.bullets.push(new am4charts.LabelBullet());
-    valueLabel.label.text = "{valueY} cases";
-    valueLabel.label.fill = am4core.color('#fff');
-    valueLabel.label.dy = 15;
+  let valueLabel = series.bullets.push(new am4charts.LabelBullet());
+  valueLabel.label.text = "{valueY} cases";
+  valueLabel.label.fill = am4core.color('#fff');
+  valueLabel.label.dy = 15;
 })
+
+// Covid19 Increase Chart
+
+  let covidChart = am4core.create("chart__covid", am4charts.XYChart);
+
+  covidChart.data = [
+    {
+      country: "Cyprus",
+      percent: 30,
+    },
+    {
+      country: "Singapore",
+      percent: 33,
+    },
+    {
+      country: "Argentina",
+      percent: 22,
+    },
+    {
+      country: "Spain",
+      percent: 12.4,
+    },
+    {
+      country: "UK",
+      percent: 50,
+    },
+  ];
+  // Create axes
+  var countryAxis = covidChart.xAxes.push(new am4charts.CategoryAxis());
+  countryAxis.dataFields.category = "country";
+  countryAxis.renderer.minGridDistance = 50;
+
+  var hotlineAxis = covidChart.yAxes.push(new am4charts.ValueAxis());
+  countryAxis.renderer.grid.template.disabled = true;
+  hotlineAxis.renderer.grid.template.disabled = true;
+  hotlineAxis.max = 55;
+  hotlineAxis.min = 5;
+  hotlineAxis.strictMinMax = true; 
+
+  // Create series
+  var hotlineSeries = covidChart.series.push(new am4charts.LineSeries());
+  hotlineSeries.dataFields.valueY = "percent";
+  hotlineSeries.dataFields.categoryX = "country";
+
+  hotlineSeries.strokeWidth = 2;
+  hotlineSeries.tensionX = 0.77;
+  hotlineSeries.stroke = am4core.color("#FF5933");
+  
+  var bullet = hotlineSeries.bullets.push(new am4charts.CircleBullet());
+  bullet.tooltipText = "{valueY}% increase";
+  bullet.showTooltipOn = "hover";
+
+  let circle = bullet.createChild(am4core.Circle);
+  circle.width = 15;
+  circle.height = 15;
+  circle.stroke = am4core.color("#F7F0ED");
+  circle.fill = am4core.color("#FF5933");
+  circle.strokeWidth = 2;
+
+  let hoverState = bullet.states.create("hover");
+  hoverState.properties.scale = 1.7;
+
+  // Tooltip
+  hotlineSeries.tooltip.label.textAlign = "middle";
+  hotlineSeries.tooltip.pointerOrientation = "down";
+  hotlineSeries.tooltip.dy = -15;
+  hotlineSeries.tooltip.getFillFromObject = false;
+  hotlineSeries.tooltip.background.fill = am4core.color("#FF5933");
+  hotlineSeries.tooltip.label.fill = am4core.color("#F7F0ED");
