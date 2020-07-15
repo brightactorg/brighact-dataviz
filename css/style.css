@@ -74,6 +74,10 @@ button:hover {
   @apply text-orange;
 }
 
+.legend {
+  @apply pt-6 pb-6;
+}
+
 /* MAP */
 .map__wrapper p {
   @apply pl-8 pr-8;
@@ -81,7 +85,7 @@ button:hover {
 
 @screen md {
   .map__wrapper p {
-    @apply w-1/2 pl-12 pr-12;
+    @apply pl-12 pr-12 text-right;
   }
 }
 
@@ -139,7 +143,7 @@ button:hover {
 }
 
 .slider-wrapper h2 {
-  @apply p-8;
+  @apply p-8 text-center;
 }
 
 @screen md {
@@ -256,9 +260,9 @@ button:hover {
   @apply uppercase;
 }
 
-.main__hubei {
+/* .main__hubei {
   @apply opacity-0;
-}
+} */
 
 .main__who p:last-of-type,
 .main__hubei p {
@@ -275,7 +279,7 @@ button:hover {
 }
 
 .hubei__title {
-  @apply mt-24;
+  @apply mt-24 opacity-0;
 }
 
 @screen bg {
@@ -378,23 +382,19 @@ button:hover {
 
 @screen bg {
   .covid-data__violence {
-    @apply p-16 mt-32 grid grid-cols-similar gap-16 p-12;
+    @apply mt-32 p-12;
   }
 }
 
 .violence__right {
-  @apply pt-16 opacity-0;
+  @apply pt-16 opacity-0 w-3/4;
+  margin: 2rem auto;
   height: 100vh;
 }
 
 .violence__left {
-  @apply opacity-0;
-}
-
-@screen bg {
-  .violence__right {
-    @apply pt-0;
-  }
+  @apply opacity-0 w-3/4;
+  margin: 2rem auto;
 }
 
 @screen md {
@@ -465,6 +465,25 @@ footer {
 }
 
 /* svgs */
+.custom-shape-divider-top-orange {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-orange svg {
+  position: relative;
+  width: calc(135% + 1.3px);
+  height: 204px;
+}
+
+.custom-shape-divider-top-orange .shape-fill {
+  fill: #FF5933;
+}
+
 .custom-shape-divider-top-1593201312 {
     position: absolute;
     left: 0;

@@ -19,9 +19,7 @@ let observer = new IntersectionObserver(intersectCallback, observerOptions);
 function intersectCallback(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      console.log(entry);
       entry.target.classList.add('visible');
-
       observer.unobserve(entry.target);
     }
   });
