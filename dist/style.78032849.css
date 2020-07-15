@@ -112,6 +112,11 @@ button:hover{
   color:rgba(255, 89, 51, var(--text-opacity))
 }
 
+.legend{
+  padding-top:1.5rem;
+  padding-bottom:1.5rem
+}
+
 .map__wrapper p{
   padding-left:2rem;
   padding-right:2rem
@@ -119,9 +124,9 @@ button:hover{
 
 @media (min-width: 768px){
   .map__wrapper p{
-    width:50%;
     padding-left:3rem;
-    padding-right:3rem
+    padding-right:3rem;
+    text-align:right
   }
 }
 
@@ -200,7 +205,8 @@ button:hover{
 }
 
 .slider-wrapper h2{
-  padding:2rem
+  padding:2rem;
+  text-align:center
 }
 
 @media (min-width: 768px){
@@ -343,10 +349,6 @@ button:hover{
   text-transform:uppercase
 }
 
-.main__hubei{
-  opacity:0
-}
-
 .main__hubei p,.main__who p:last-of-type{
   display:inline
 }
@@ -365,7 +367,8 @@ button:hover{
 }
 
 .hubei__title{
-  margin-top:6rem
+  margin-top:6rem;
+  opacity:0
 }
 
 @media (min-width: 980px){
@@ -475,12 +478,7 @@ button:hover{
 
 @media (min-width: 980px){
   .covid-data__violence{
-    padding:4rem;
     margin-top:8rem;
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    grid-gap:4rem;
-    gap:4rem;
     padding:3rem
   }
 }
@@ -488,17 +486,15 @@ button:hover{
 .violence__right{
   padding-top:4rem;
   opacity:0;
+  width:75%;
+  margin:2rem auto;
   height:100vh
 }
 
 .violence__left{
-  opacity:0
-}
-
-@media (min-width: 980px){
-  .violence__right{
-    padding-top:0
-  }
+  opacity:0;
+  width:75%;
+  margin:2rem auto
 }
 
 @media (min-width: 768px){
@@ -595,6 +591,25 @@ footer{
   opacity:1;
   transition-property:opacity;
   transition-duration:500ms
+}
+
+.custom-shape-divider-top-orange{
+  position:absolute;
+  left:0;
+  top:1rem;
+  width:100%;
+  overflow:hidden;
+  line-height:0
+}
+
+.custom-shape-divider-top-orange svg{
+  position:relative;
+  width:calc(135% + 1.3px);
+  height:204px
+}
+
+.custom-shape-divider-top-orange .shape-fill{
+  fill:#ff5933
 }
 
 .custom-shape-divider-top-1593201312{
