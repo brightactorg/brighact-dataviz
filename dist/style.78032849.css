@@ -198,19 +198,28 @@ button:hover{
   opacity:0
 }
 
-.slider-wrapper{
+.shape-wrap{
   position:relative;
   padding-top:3rem;
   padding-bottom:3rem
 }
 
+.slider-wrapper{
+  position:relative;
+  margin-top:8rem;
+  --bg-opacity:1;
+  background-color:#FF5933;
+  background-color:rgba(255, 89, 51, var(--bg-opacity))
+}
+
 .slider-wrapper h2{
-  padding:2rem;
-  text-align:center
+  padding-left:4rem
 }
 
 @media (min-width: 768px){
-  @apply pl-12 pt-12 pb-6
+  .slider-wrapper h2{
+    padding-bottom:0
+  }
 }
 
 .slider-wrapper svg{
@@ -313,20 +322,20 @@ button:hover{
   padding-bottom:2.5rem
 }
 
-.covid-data__main{
+.covid-data__main--who{
   display:grid;
   padding:2rem
 }
 
-.covid-data__main h1,.covid-data__main h2,.covid-data__main h3{
+.main__hubei h3,.main__who h1,.main__who h2,.main__who h3{
   --text-opacity:1;
   color:#171AA8;
   color:rgba(23, 26, 168, var(--text-opacity))
 }
 
 @media (min-width: 980px){
-  .covid-data__main{
-    grid-template-columns:1fr 1.2fr;
+  .covid-data__main--who{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
     grid-gap:1rem;
     gap:1rem;
     padding:3rem
@@ -359,6 +368,11 @@ button:hover{
   line-height:1.625
 }
 
+.covid-data__main--hubei{
+  max-width:56rem;
+  margin:0 auto
+}
+
 .hubei__info{
   display:grid;
   grid-template-rows:1fr 2fr;
@@ -379,22 +393,13 @@ button:hover{
 
 .covid-data__countries{
   padding:2rem;
-  opacity:0
+  margin:0 auto
 }
 
 @media (min-width: 768px){
   .covid-data__countries{
     display:grid;
     grid-template-columns:repeat(3, minmax(0, 1fr));
-    grid-gap:5rem;
-    gap:5rem;
-    padding:3rem
-  }
-}
-
-@media (min-width: 1024px){
-  .covid-data__countries{
-    grid-template-columns:0.5fr 2fr 2fr 2fr;
     grid-gap:5rem;
     gap:5rem;
     padding:3rem
@@ -429,13 +434,6 @@ button:hover{
 @media (min-width: 768px){
   .country img{
     max-width:100%
-  }
-}
-
-@media (min-width: 1024px){
-  .country:first-of-type{
-    grid-column-start:2;
-    grid-column-end:2
   }
 }
 
@@ -596,7 +594,7 @@ footer{
 .custom-shape-divider-top-orange{
   position:absolute;
   left:0;
-  top:1rem;
+  top:-1.2rem;
   width:100%;
   overflow:hidden;
   line-height:0
@@ -677,7 +675,7 @@ footer{
 .custom-shape-divider-bottom-1593202295{
   position:absolute;
   left:0;
-  top:-4rem;
+  top:-6rem;
   width:100%;
   overflow:hidden;
   line-height:0;
@@ -689,16 +687,31 @@ footer{
 .custom-shape-divider-bottom-1593202295 svg{
   position:relative;
   width:calc(177% + 1.3px);
-  height:72px
+  height:120px
 }
 
 .custom-shape-divider-bottom-1593202295 .shape-fill{
   fill:#171aa8
 }
 
-.custom-shape-divider-bottom-1593202630{
+.custom-shape-divider-blue{
+  top:-2rem;
+  z-index:0
+}
+
+.custom-shape-divider-blue svg{
+  position:relative;
+  width:calc(177% + 1.3px);
+  height:72px
+}
+
+.custom-shape-divider-blue .shape-fill{
+  fill:#171aa8
+}
+
+.custom-shape-divider-blue{
   position:absolute;
-  top:-14.3rem;
+  top:-4.3rem;
   left:0;
   width:100%;
   overflow:hidden;
@@ -715,6 +728,17 @@ footer{
 
 .custom-shape-divider-bottom-1593202630 .shape-fill{
   fill:#7854f2
+}
+
+.custom-shape-divider-bottom-1593202630{
+  position:absolute;
+  top:-13.3rem;
+  left:0;
+  width:100%;
+  overflow:hidden;
+  line-height:0;
+  transform:rotate(180deg);
+  z-index:-1
 }
 
 /*# sourceMappingURL=/style.78032849.css.map */
