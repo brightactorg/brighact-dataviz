@@ -138,16 +138,22 @@ button:hover {
   @apply opacity-0;
 }
 
-.slider-wrapper {
+.shape-wrap {
   @apply relative pt-12 pb-12;
 }
 
+.slider-wrapper {
+  @apply relative mt-32 bg-orange;
+}
+
 .slider-wrapper h2 {
-  @apply p-8 text-center;
+  @apply pl-16;
 }
 
 @screen md {
-  @apply pl-12 pt-12 pb-6;
+  .slider-wrapper h2 {
+    @apply pb-0;
+  }
 }
 
 .slider-wrapper svg {
@@ -231,19 +237,20 @@ button:hover {
   @apply pt-10 pb-10;
 }
 
-.covid-data__main {
+.covid-data__main--who {
   @apply grid p-8;
 }
 
-.covid-data__main h1,
-.covid-data__main h2,
-.covid-data__main h3 {
+.main__who h1,
+.main__who h2,
+.main__who h3,
+.main__hubei h3 {
   @apply text-blue;
 }
 
 @screen bg {
-  .covid-data__main {
-    @apply grid-cols-similar-inverse gap-4 p-12;
+  .covid-data__main--who {
+    @apply grid-cols-2 gap-4 p-12;
   }
 }
 
@@ -274,6 +281,12 @@ button:hover {
   @apply inline p-2 leading-relaxed;
 }
 
+.covid-data__main--hubei {
+  @apply max-w-4xl;
+  margin: 0 auto; 
+
+}
+
 .hubei__info {
   @apply grid grid-rows-two-thirds-inverse gap-20;
 }
@@ -289,7 +302,8 @@ button:hover {
 }
 
 .covid-data__countries {
-  @apply p-8 opacity-0;
+  @apply p-8;
+  margin: 0 auto;
 }
   
 @screen md {
@@ -298,11 +312,11 @@ button:hover {
   }
 }
 
-@screen lg {
+/* @screen lg {
   .covid-data__countries {
     @apply grid-cols-three-indent-half gap-20 p-12;
   }
-}
+} */
 
 .country {
   @apply grid grid-cols-similar-inverse grid-rows-similar;
@@ -335,12 +349,12 @@ button:hover {
     max-width: 100%;
   }
 }
-
+/* 
 @screen lg {
   .country:first-of-type {
     @apply col-start-2 col-end-2;
   }
-}
+} */
 
 
 .country__top--text {
@@ -468,7 +482,7 @@ footer {
 .custom-shape-divider-top-orange {
   position: absolute;
   left: 0;
-  top: 1rem;
+  top: -1.2rem;
   width: 100%;
   overflow: hidden;
   line-height: 0;
@@ -549,7 +563,7 @@ footer {
 .custom-shape-divider-bottom-1593202295 {
     position: absolute;
     left: 0;
-    top: -4rem;
+    top: -6rem;
     width: 100%;
     overflow: hidden;
     line-height: 0;
@@ -561,16 +575,37 @@ footer {
 .custom-shape-divider-bottom-1593202295 svg {
     position: relative;
     width: calc(177% + 1.3px);
-    height: 72px;
+    height: 120px;
 }
 
 .custom-shape-divider-bottom-1593202295 .shape-fill {
     fill: #171AA8;
 }
 
-.custom-shape-divider-bottom-1593202630 {
+.custom-shape-divider-blue {
     position: absolute;
-    top: -14.3rem;
+    left: 0;
+    top: -2rem;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: 0;
+}
+
+.custom-shape-divider-blue svg {
+    position: relative;
+    width: calc(177% + 1.3px);
+    height: 72px;
+}
+
+.custom-shape-divider-blue .shape-fill {
+    fill: #171AA8;
+}
+
+.custom-shape-divider-blue {
+    position: absolute;
+    top: -4.3rem;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -587,4 +622,15 @@ footer {
 
 .custom-shape-divider-bottom-1593202630 .shape-fill {
     fill: #7854F2;
+}
+
+.custom-shape-divider-bottom-1593202630 {
+    position: absolute;
+    top: -13.3rem;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: -1;
 }
